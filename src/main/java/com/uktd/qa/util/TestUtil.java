@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -17,9 +19,10 @@ public class TestUtil extends TestBase
 {
 	public static long Page_Load_TIMEOUT = 300;
 	public static long IMPLICIT_WAIT = 60;
+	//public static Properties prop = new Properties();
 	
-	public static String TESTDATA_SHEET_PATH = "C:\\Users\\swapnilb\\workspace"
-			+ "\\UKTD-Maven\\src\\main\\java\\com\\uktd\\qa\\testdata\\AddAgent.xlsx";
+	
+	//public static String TESTDATA_SHEET_PATH = "C:\\Users\\swapnilb\\workspace\\UKTD-Maven\\src\\main\\java\\com\\uktd\\qa\\testdata\\AddAgent.xlsx";
 
 	static Workbook book;
 	static Sheet sheet;
@@ -30,9 +33,27 @@ public class TestUtil extends TestBase
 
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
+		String machineName = prop.getProperty("machine");
+		
 		try {
-			file = new FileInputStream(TESTDATA_SHEET_PATH);
-		} catch (FileNotFoundException e) {
+			if(machineName.equalsIgnoreCase("office")) 
+			{
+			file = new FileInputStream("C:\\Users\\swapnilb\\workspace"
+					+ "\\UKTD-Maven\\src\\main\\java\\com\\uktd\\qa\\testdata\\AddAgent.xlsx");
+			}
+			
+			else if(machineName.equalsIgnoreCase("personal")) 
+			{
+			file = new FileInputStream("C:\\Users\\swapnil\\eclipse-workspace\\UKTD_Maven\\src\\main\\java\\com"
+					+ "\\uktd\\qa\\testdata\\AddAgent.xlsx");
+			}
+			
+			else 
+			{
+				System.out.println("Excel file path needs to be set on your machine");
+			}
+			
+			} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		try {

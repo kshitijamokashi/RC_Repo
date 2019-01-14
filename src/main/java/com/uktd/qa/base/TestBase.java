@@ -28,6 +28,7 @@ public class TestBase
 	static	Logger log = Logger.getLogger(TestBase.class);
 	
 	
+
 	public static WebDriver driver;
 	public static Properties prop;
 	public WebDriverWait wait;  
@@ -42,11 +43,20 @@ public class TestBase
 		try 
 		{
  			prop = new Properties();
-			
-			FileInputStream ip = new FileInputStream("C:\\Users\\swapnilb\\workspace\\UKTD-MAVEN\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
-			
-			prop.load(ip);
+ 		
+ 			FileInputStream ip;
+ 			//For office machine
+ 			/*	ip = new FileInputStream("C:\\Users\\swapnilb\\workspace\\UKTD-MAVEN\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
+ 				prop.load(ip);
+ 			 */
+ 			
+ 			
+ 			//For Personal Machine 
+ 				ip = new FileInputStream("C:\\Users\\swapnil\\eclipse-workspace\\UKTD_Maven\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
+ 				prop.load(ip);
 
+ 			
+			
 		}catch(FileNotFoundException e)
 		{
 			e.printStackTrace();
@@ -64,9 +74,25 @@ public class TestBase
 	{
 		String broweserName = prop.getProperty("browser");
 		
-		if (broweserName.equalsIgnoreCase("chrome"))
-		{
-			System.setProperty("webdriver.chrome.driver","C:\\Users\\swapnilb\\workspace\\chromedriver.exe");
+		 String machineName = prop.getProperty("machine");
+		
+	
+		 if (broweserName.equalsIgnoreCase("chrome"))
+		   {
+			
+			if(machineName.equalsIgnoreCase("office"))
+			{
+				System.setProperty("webdriver.chrome.driver","C:\\Users\\swapnilb\\workspace\\chromedriver.exe");
+			}
+			else if(machineName.equalsIgnoreCase("personal"))
+			{
+				System.setProperty("webdriver.chrome.driver","C:\\Users\\swapnil\\eclipse-workspace\\WebDriver\\test\\scripts\\resources\\chromedriver.exe");
+			}
+			else 
+			{
+				System.out.println("Please add new machine chromedriver path");
+			}
+			
 			driver=new ChromeDriver();
 			log.info("Chrome Browser Started");
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
