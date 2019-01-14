@@ -43,8 +43,7 @@ public class TestBase
 		{
  			prop = new Properties();
 			
-			FileInputStream ip = new FileInputStream("C:\\Users\\swapnil\\eclipse-workspace\\UKTD_Maven"
-					+ "\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
+			FileInputStream ip = new FileInputStream("C:\\Users\\swapnilb\\workspace\\UKTD-MAVEN\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
 			
 			prop.load(ip);
 
@@ -65,16 +64,16 @@ public class TestBase
 	{
 		String broweserName = prop.getProperty("browser");
 		
-		if (broweserName.equals("chrome"))
+		if (broweserName.equalsIgnoreCase("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver","C:\\Users\\swapnil\\eclipse-workspace\\WebDriver\\test\\scripts\\resources\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","C:\\Users\\swapnilb\\workspace\\chromedriver.exe");
 			driver=new ChromeDriver();
 			log.info("Chrome Browser Started");
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			
 		}
 		
-		else if (broweserName.equals("FF"))
+		else if (broweserName.equalsIgnoreCase("FF"))
 		{
 			 System.setProperty("webdriver.gecko.driver","C:\\Users\\swapnil\\eclipse-workspace\\WebDriver\\test\\scripts\\resources\\geckodriver.exe");
 			 driver=new FirefoxDriver();
