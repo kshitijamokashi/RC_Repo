@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38366" started-at="2019-01-15T13:44:03Z" finished-at="2019-01-15T13:44:41Z">
+  <suite name="Default suite" duration-ms="54278" started-at="2019-01-15T14:52:27Z" finished-at="2019-01-15T14:53:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38366" started-at="2019-01-15T13:44:03Z" finished-at="2019-01-15T13:44:41Z">
+    <test name="Default test" duration-ms="54278" started-at="2019-01-15T14:52:27Z" finished-at="2019-01-15T14:53:21Z">
       <class name="com.uktd.qa.testcases.AgentToPurAgentFillTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="beforeMethod" is-config="true" duration-ms="27892" started-at="2019-01-15T13:44:03Z" finished-at="2019-01-15T13:44:31Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="beforeMethod" is-config="true" duration-ms="27116" started-at="2019-01-15T14:52:27Z" finished-at="2019-01-15T14:52:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="FullReportAgentToPurAgentFill()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="FullReportAgentToPurAgentFill" duration-ms="10432" started-at="2019-01-15T13:44:31Z" finished-at="2019-01-15T13:44:41Z">
+        <test-method status="PASS" signature="FullReportAgentToPurAgentFill()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="FullReportAgentToPurAgentFill" duration-ms="27125" started-at="2019-01-15T14:52:54Z" finished-at="2019-01-15T14:53:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FullReportAgentToPurAgentFill -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-01-15T13:44:41Z" finished-at="2019-01-15T13:44:41Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-01-15T14:53:21Z" finished-at="2019-01-15T14:53:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

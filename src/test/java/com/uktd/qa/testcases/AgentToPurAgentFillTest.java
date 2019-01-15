@@ -9,6 +9,7 @@ import com.uktd.qa.pages.CreateApplicationPage;
 import com.uktd.qa.pages.LoginPage;
 import com.uktd.qa.pages.OpenApplicationPage;
 import com.uktd.qa.pages.QuickStepOnePage;
+import com.uktd.qa.pages.StepThreePage;
 import com.uktd.qa.pages.StepTwoPage;
 
 public class AgentToPurAgentFillTest extends TestBase 
@@ -18,7 +19,7 @@ public class AgentToPurAgentFillTest extends TestBase
 	CreateApplicationPage createApplication;
 	QuickStepOnePage quickstepOnePage;
 	StepTwoPage stepTwoPage;
-	
+	StepThreePage stepThreePage;
 	
 	public AgentToPurAgentFillTest()
 	{
@@ -32,6 +33,10 @@ public class AgentToPurAgentFillTest extends TestBase
 	  createApplication.FullReportAgentToPurAgentFill();
 	  quickstepOnePage = new QuickStepOnePage();
 	  quickstepOnePage.FillQuickStepOneFullReport();
+	  stepTwoPage = new StepTwoPage();
+	  stepTwoPage.FriendsAndFamilyYesLA();
+	  stepThreePage = new StepThreePage();
+	  stepThreePage.fillStepThree();
   }
   
   
