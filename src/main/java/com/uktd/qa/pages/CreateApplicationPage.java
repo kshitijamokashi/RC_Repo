@@ -104,7 +104,8 @@ public class CreateApplicationPage extends TestBase
 	@FindBy(xpath = "//*[contains(text(),'Next Step')]")
 	WebElement nextbutton;
 	
-	
+	@FindBy(xpath = "//label[contains(text(),'Proposed move date*')]")
+	WebElement label;
 	
 	public QuickStepOnePage FullReportAgentToPurAgentFill()
 	{
@@ -133,8 +134,7 @@ public class CreateApplicationPage extends TestBase
 		List.selectByVisibleText("30 Broad Lane Norris Green Liverpool");
 		
 		moveInDate.sendKeys("31/01/2019");
-		moveInDate.click();
-		date.click();
+		label.click();
 		
 		wait.until(ExpectedConditions.visibilityOf(tenancyPeriod));
 		Select Period = new Select(tenancyPeriod);

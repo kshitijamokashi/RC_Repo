@@ -205,6 +205,14 @@ public class StepTwoPage extends TestBase
 			@FindBy (xpath = "//*[@id='prevMovedAddressList']")
 			WebElement prevAddList;
 			
+			@FindBy (xpath = "//label[contains(text(),'Enter your moved in date*')]")
+			WebElement labelCurentMoveInDate;
+			
+			@FindBy (xpath = "//label[contains(text(),'Moved in date*')]")
+			WebElement lablePrevMoveInDate;
+			
+			@FindBy (xpath = "//label[contains(text(),'Moved out date*')]")
+			WebElement labelPrevMoveOutDate;
 			
 			public void landlord_section() 
 			{
@@ -218,6 +226,7 @@ public class StepTwoPage extends TestBase
 				select.selectByVisibleText("30 Broad Lane Norris Green Liverpool");
 				
 				fax.sendKeys("123456789");
+				
 				
 				select = new Select(lLTitle);
 				select.selectByVisibleText("Mrs");
@@ -297,18 +306,21 @@ public class StepTwoPage extends TestBase
 				wait.until(ExpectedConditions.invisibilityOf(loader));
 				currentAddMoveIn.clear();
 				currentAddMoveIn.sendKeys("01/01/2011");
-				//Date.click();
+				labelCurentMoveInDate.click();
+				wait.until(ExpectedConditions.invisibilityOf(loader));
 			}
 
 			public void address_you_were_renting() 
 			{
-				WebDriverWait wait = new WebDriverWait(driver, 100);
+				wait = new WebDriverWait(driver, 100);
 				prevMoveInDate.clear();
 				prevMoveInDate.sendKeys("20/01/2010");
-				//Date.click();
+				lablePrevMoveInDate.click();
+				
 				PrevMoveOutDate.clear();
 				PrevMoveOutDate.sendKeys("01/07/2018");
-				//Date.click();
+				labelPrevMoveOutDate.click();
+				
 				prevAddPostCode.sendKeys("M36GB");
 				js = (JavascriptExecutor)driver;
 				js.executeScript("arguments[0].click();",prevAddPostCodeFind);
@@ -321,9 +333,9 @@ public class StepTwoPage extends TestBase
 			}
 			
 			//Friends And Family Yes		
-			public void FriendsAndFamilyYesLA()
+			public StepThreePage FriendsAndFamilyYesLA()
 			{
-				WebDriverWait wait = new WebDriverWait(driver,100);
+			    wait = new WebDriverWait(driver,100);
 
 				wait.until(ExpectedConditions.invisibilityOf(loader));
 				wait.until(ExpectedConditions.visibilityOf(accStatus));
@@ -332,11 +344,11 @@ public class StepTwoPage extends TestBase
 
 				wait.until(ExpectedConditions.visibilityOf(rentedLast6MonthYes));
 
-				JavascriptExecutor js1 = (JavascriptExecutor)driver;
-				js1.executeScript("arguments[0].click();",rentedLast6MonthYes);
+				js = (JavascriptExecutor)driver;
+				js.executeScript("arguments[0].click();",rentedLast6MonthYes);
 
 				wait.until(ExpectedConditions.visibilityOf(lettingAgent));
-				js1.executeScript("arguments[0].click();",lettingAgent);
+				js.executeScript("arguments[0].click();",lettingAgent);
 
 				enter_current_address_info();
 
@@ -349,6 +361,8 @@ public class StepTwoPage extends TestBase
 				enter_bank_info();
 
 				updateButton.sendKeys(Keys.RETURN);
+				
+				return new StepThreePage();
 			}
 
 }

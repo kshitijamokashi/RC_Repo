@@ -66,7 +66,7 @@ public class StepThreePage extends TestBase
 	WebElement date;
 
 
-	public void fillStepThree(){
+	public StepFourPage fillStepThree(){
 		wait = new WebDriverWait(driver,200);
 
 		wait.until(ExpectedConditions.invisibilityOf(loader));
@@ -108,7 +108,7 @@ public class StepThreePage extends TestBase
 		
 		
 		nextButton.sendKeys(Keys.RETURN);
-		
+		return new StepFourPage();
 	}
 
 	

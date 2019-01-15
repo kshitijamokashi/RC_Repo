@@ -129,8 +129,9 @@ public class QuickStepOnePage extends TestBase
 	@FindBy(xpath ="//*[contains(text(),'Previous Accommodation Information' )]")
 	WebElement prevAccBlock;
 	
-	@FindBy(xpath = "html/body/section/section/div/div/ng-view/div/div/div/form/div[1]")
-	WebElement date;
+	
+	@FindBy(xpath = "//label[contains(text(),'Date of Birth*')]")
+	WebElement label;
 	
 	
 	public StepTwoPage FillQuickStepOneFullReport() //throws Exception
@@ -139,7 +140,7 @@ public class QuickStepOnePage extends TestBase
 		rentshare.clear();
 		rentshare.sendKeys("100");
 		
-		Select select = new Select(title);
+		select = new Select(title);
 		select.selectByVisibleText("Prof");
 		
 		firstName.sendKeys("Swapnil");
@@ -153,9 +154,10 @@ public class QuickStepOnePage extends TestBase
 		maidenName.sendKeys("NA");
 		
 		dateOfBirth.sendKeys("28/01/1994");
+		//label.click();
 		
-		Select select1 = new Select(maritalStatus);
-		select1.selectByVisibleText("Married");
+		select = new Select(maritalStatus);
+		select.selectByVisibleText("Married");
 		
 		homePhone.sendKeys("02425261552");
 		
