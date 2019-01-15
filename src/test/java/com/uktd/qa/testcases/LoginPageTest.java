@@ -2,21 +2,20 @@ package com.uktd.qa.testcases;
 
 
 
-import com.uktd.qa.base.TestBase;
-import com.uktd.qa.pages.LoginPage;
-import com.uktd.qa.pages.OpenApplication;
-import com.uktd.qa.pages.UnassignedApplicant;
-
-
-import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.uktd.qa.base.TestBase;
+import com.uktd.qa.pages.LoginPage;
+import com.uktd.qa.pages.OpenApplicationPage;
+import com.uktd.qa.pages.UnassignedApplicant;
 
 public class LoginPageTest extends TestBase
 {
 	LoginPage loginPage;
-	OpenApplication openApplication;
+	OpenApplicationPage openApplication;
 	UnassignedApplicant unassignedApplicant;
 	
 	public LoginPageTest()
@@ -32,7 +31,7 @@ public class LoginPageTest extends TestBase
 	  loginPage = new LoginPage();
 	  loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	 // return new OpenApplication();
-	  openApplication = new OpenApplication();
+	  openApplication = new OpenApplicationPage();
 	  String Header = openApplication.getPageHeader();
 //	  Assert.assertEquals(Header,"Open Applications");
 	 Assert.assertTrue(Header.contains("Open Applications"));

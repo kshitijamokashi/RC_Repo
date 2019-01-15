@@ -1,145 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-01-14T18:22:24Z" name="Default suite" finished-at="2019-01-14T18:33:21Z" duration-ms="657408">
+  <suite name="Default suite" duration-ms="38366" started-at="2019-01-15T13:44:03Z" finished-at="2019-01-15T13:44:41Z">
     <groups>
     </groups>
-    <test started-at="2019-01-14T18:22:24Z" name="Default test" finished-at="2019-01-14T18:33:21Z" duration-ms="657408">
-      <class name="com.uktd.qa.testcases.AddAgentTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:22:28Z" name="setUp" finished-at="2019-01-14T18:25:49Z" duration-ms="201065" status="PASS">
+    <test name="Default test" duration-ms="38366" started-at="2019-01-15T13:44:03Z" finished-at="2019-01-15T13:44:41Z">
+      <class name="com.uktd.qa.testcases.AgentToPurAgentFillTest">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="beforeMethod" is-config="true" duration-ms="27892" started-at="2019-01-15T13:44:03Z" finished-at="2019-01-15T13:44:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addAgentTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:25:49Z" name="addAgentTest" data-provider="getAddAgentTestData" finished-at="2019-01-14T18:26:05Z" duration-ms="16583" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Test Three]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[M36GB]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Apartment 11 Block B Alto Sillavan Way Salford]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[02055223311]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[test@three.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[www.testthree.com]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="FullReportAgentToPurAgentFill()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="FullReportAgentToPurAgentFill" duration-ms="10432" started-at="2019-01-15T13:44:31Z" finished-at="2019-01-15T13:44:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addAgentTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:26:05Z" name="tearDown" finished-at="2019-01-14T18:26:06Z" duration-ms="1189" status="PASS">
+        </test-method> <!-- FullReportAgentToPurAgentFill -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@464bee09]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-01-15T13:44:41Z" finished-at="2019-01-15T13:44:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:26:06Z" name="setUp" finished-at="2019-01-14T18:30:48Z" duration-ms="281648" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addAgentTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:30:48Z" name="addAgentTest" data-provider="getAddAgentTestData" finished-at="2019-01-14T18:31:13Z" duration-ms="24947" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Test Four]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[M36GB]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Apartment 12 Block B Alto Sillavan Way Salford]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[02524000200]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[test@four.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[www.testfour.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAgentTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:31:13Z" name="tearDown" finished-at="2019-01-14T18:31:15Z" duration-ms="1689" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:31:15Z" name="setUp" finished-at="2019-01-14T18:33:06Z" duration-ms="111300" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="addAgentTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:33:06Z" name="addAgentTest" data-provider="getAddAgentTestData" finished-at="2019-01-14T18:33:20Z" duration-ms="13751" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Test Five]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[M36GB]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Apartment 13 Block B Alto Sillavan Way Salford]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[02524000201]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[test@three.com]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[www.testfive.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addAgentTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.uktd.qa.testcases.AddAgentTest@3f56875e]" started-at="2019-01-14T18:33:20Z" name="tearDown" finished-at="2019-01-14T18:33:21Z" duration-ms="1172" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.uktd.qa.testcases.AddAgentTest -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

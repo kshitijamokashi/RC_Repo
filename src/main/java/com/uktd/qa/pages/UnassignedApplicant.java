@@ -66,6 +66,7 @@ public class UnassignedApplicant extends TestBase
 		wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.invisibilityOf(Loader));
 		SideMenu.click();
+		wait.until(ExpectedConditions.visibilityOf(AgentMgmt));
 		wait.until(ExpectedConditions.elementToBeClickable(AgentMgmt));
 		AgentMgmt.click();
 	
