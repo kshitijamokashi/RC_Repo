@@ -62,7 +62,7 @@ public class AgentToPurAgentFillTest extends TestBase
 	  openApplication.agentTransaction();
 	  
 	  agentTransactionPage = new AgentTransactionPage();
-	  String [] transValue = agentTransactionPage.getAgentTransation(ApplicantId);
+	  String [] transValue = agentTransactionPage.getAgentToPurchaseTransation(ApplicantId);
 	  
 	  Assert.assertEquals(transValue[0],"Agent Purchase -Full Report-Swapnil Sunil Bhaksar("+ApplicantId+")");
 	  Assert.assertEquals(transValue[1], "1");

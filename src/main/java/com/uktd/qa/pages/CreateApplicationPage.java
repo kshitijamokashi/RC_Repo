@@ -107,18 +107,18 @@ public class CreateApplicationPage extends TestBase
 	@FindBy(xpath = "//label[contains(text(),'Proposed move date*')]")
 	WebElement label;
 	
-	public QuickStepOnePage FullReportAgentToPurAgentFill()
+	public QuickStepOnePage FullReportAgentToPurAgentFill(String f_Report, String p_method)
 	{
 		js = (JavascriptExecutor)driver;
 		wait = new WebDriverWait (driver,100); 
 		
 		wait.until(ExpectedConditions.visibilityOf(applicationType));
 		Select AppType = new Select(applicationType);
-		AppType.selectByVisibleText("Full Profile");
+		AppType.selectByVisibleText("f_Report");
 
 		wait.until(ExpectedConditions.visibilityOf(purchaseMethod));
 		Select PurType = new Select(purchaseMethod);
-		PurType.selectByVisibleText("Agent to Purchase");
+		PurType.selectByVisibleText(p_method);
 		
 		Select Filling = new Select(fillBy);
 		Filling.selectByVisibleText("I want to enter the full details of applicant now");

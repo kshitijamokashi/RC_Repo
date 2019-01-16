@@ -1,7 +1,8 @@
 package com.uktd.qa.pages;
 
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,7 +25,7 @@ public class UnassignedApplicant extends TestBase
 	@FindBy (xpath = "//*[contains(text(), 'Unassigned Applicants')]")
 	WebElement Header;
 	
-	@FindBy (xpath = "//*[@id='side-menu']")
+	@FindBy (xpath = "//div[@class='sidebar-nav']")
 	WebElement SideMenu;
 	
 	@FindBy (xpath = "//a[@href ='#/incompleteApplicants']")
@@ -52,9 +53,10 @@ public class UnassignedApplicant extends TestBase
 	
 	public IncompleteApplicant openIncompleteApplicantListing()
 	{
+		action = new Actions(driver);
 		wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.invisibilityOf(Loader));
-		SideMenu.click();
+		action.moveToElement(SideMenu).build().perform();
 		wait.until(ExpectedConditions.visibilityOf(IncompleteApplicant));
 		IncompleteApplicant.click();
 	
@@ -63,9 +65,11 @@ public class UnassignedApplicant extends TestBase
 
 	public AgentManagement openAgentManagement()
 	{
+		
+		action = new Actions(driver);
 		wait = new WebDriverWait(driver, 400);
 		wait.until(ExpectedConditions.invisibilityOf(Loader));
-		SideMenu.click();
+		action.moveToElement(SideMenu).build().perform();
 		wait.until(ExpectedConditions.visibilityOf(AgentMgmt));
 		wait.until(ExpectedConditions.elementToBeClickable(AgentMgmt));
 		AgentMgmt.click();

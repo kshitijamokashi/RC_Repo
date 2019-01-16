@@ -134,7 +134,7 @@ public class QuickStepOnePage extends TestBase
 	WebElement label;
 	
 	
-	public StepTwoPage FillQuickStepOneFullReport() //throws Exception
+	public StepTwoPage FillQuickStepOneFullReport() 
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		rentshare.clear();
@@ -190,9 +190,6 @@ public class QuickStepOnePage extends TestBase
 		
 		wait.until(ExpectedConditions.elementToBeClickable(acceptTandC));
 		js.executeScript("arguments[0].click();",acceptTandC);
-		
-		
-		
 		
 		nextButton.sendKeys(Keys.RETURN);
 		return new StepTwoPage();

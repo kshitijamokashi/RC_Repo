@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.uktd.qa.testcases.AgentToPurAgentFillTest">
+      <class name="com.uktd.qa.testcases.IncompleteApplicantTest">
         <methods>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
-          <include name="FullReportAgentToPurAgentFill"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="sendmailtofillapplication"/>
         </methods>
-      </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillTest -->
+      </class> <!-- com.uktd.qa.testcases.IncompleteApplicantTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

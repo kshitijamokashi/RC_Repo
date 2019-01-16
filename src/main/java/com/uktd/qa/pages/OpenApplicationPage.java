@@ -1,6 +1,7 @@
 package com.uktd.qa.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -91,10 +92,11 @@ public class OpenApplicationPage extends TestBase
 	
 	public  CreateApplicationPage newApplicationPage()
 	{
+		action = new Actions(driver);
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 		wait.until(ExpectedConditions.visibilityOf(sideMenu));
-		sideMenu.click();
+		action.moveToElement(sideMenu).build().perform();
 		wait.until(ExpectedConditions.visibilityOf(newApplication));
 		newApplication.click();
 		return new CreateApplicationPage();
@@ -103,10 +105,11 @@ public class OpenApplicationPage extends TestBase
 	
 	public AgentTransactionPage agentTransaction()
 	{
+		action = new Actions(driver);
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 		wait.until(ExpectedConditions.visibilityOf(sideMenu));
-		sideMenu.click();
+		action.moveToElement(sideMenu).build().perform();
 		wait.until(ExpectedConditions.visibilityOf(account_Transaction));
 		account_Transaction.click();
 		return new AgentTransactionPage();
