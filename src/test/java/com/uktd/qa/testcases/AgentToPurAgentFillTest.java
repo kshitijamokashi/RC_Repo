@@ -54,6 +54,7 @@ public class AgentToPurAgentFillTest extends TestBase
 											String a_MiddleName, String a_SurName, String a_MaidenName, 
 											String a_DOB, String m_Status, String h_Phone, String w_Phone,String a_Mobile, String e_Mail,
 											String e_MailConfirm, String a_Proof, String no_Child, String no_ChildOver18) 
+ 
   {
 	  createApplication = new CreateApplicationPage();
 	  createApplication.FullReportAgentToPurAgentFill(f_Report, p_method, filledBy, p_Code, a_Address, d_MoveIn, t_Period, m_Rent);
