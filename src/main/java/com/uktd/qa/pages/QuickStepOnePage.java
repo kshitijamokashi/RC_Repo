@@ -185,10 +185,14 @@ public class QuickStepOnePage extends TestBase
 		tandC.click();
 		
 		wait.until(ExpectedConditions.visibilityOf(checkAll));
-		checkAll.click();
+		wait.until(ExpectedConditions.elementToBeClickable(checkAll));
+		js.executeScript("arguments[0].click();",checkAll);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(acceptTandC));
-		acceptTandC.click();
+		js.executeScript("arguments[0].click();",acceptTandC);
+		
+		
+		
 		
 		nextButton.sendKeys(Keys.RETURN);
 		return new StepTwoPage();

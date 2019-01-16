@@ -1,10 +1,12 @@
 package com.uktd.qa.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.uktd.qa.base.TestBase;
+import com.uktd.qa.pages.AgentTransactionPage;
 import com.uktd.qa.pages.CompleteApplication;
 import com.uktd.qa.pages.CreateApplicationPage;
 import com.uktd.qa.pages.LoginPage;
@@ -24,11 +26,15 @@ public class AgentToPurAgentFillTest extends TestBase
 	StepThreePage stepThreePage;
 	StepFourPage stepFourPage;
 	CompleteApplication completeApplication;
+	AgentTransactionPage agentTransactionPage;
+
 	
 	public AgentToPurAgentFillTest()
 	{
 		super();
 	}
+	
+ 
 	
   @Test
   public void FullReportAgentToPurAgentFill() 
@@ -50,6 +56,19 @@ public class AgentToPurAgentFillTest extends TestBase
 	  
 	  completeApplication = new CompleteApplication();
 	  completeApplication.finishApplication();
+	  
+	  openApplication = new OpenApplicationPage();
+	  String ApplicantId =  openApplication.getApplicantID();
+	  openApplication.agentTransaction();
+	  
+	  agentTransactionPage = new AgentTransactionPage();
+	  String [] transValue = agentTransactionPage.getAgentTransation(ApplicantId);
+	  
+	  Assert.assertEquals(transValue[0],"Agent Purchase -Full Report-Swapnil Sunil Bhaksar("+ApplicantId+")");
+	  Assert.assertEquals(transValue[1], "1");
+	  Assert.assertEquals(transValue[2], "10.00");
+	  Assert.assertEquals(transValue[3], "2.00");
+	  Assert.assertEquals(transValue[4], "12.00");
   }
   
   
@@ -71,6 +90,7 @@ public class AgentToPurAgentFillTest extends TestBase
   @AfterMethod
   public void afterMethod() 
   {
+	  driver.close();
   }
 
 }

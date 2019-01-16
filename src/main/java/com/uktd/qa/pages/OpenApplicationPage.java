@@ -58,8 +58,13 @@ public class OpenApplicationPage extends TestBase
 	@FindBy (xpath = "//div[@class='sidebar clearfix ng-scope']//child::a[@href='#/createApplication']")
 	WebElement newApplication;
 	
+	@FindBy (xpath = "//td[@data-title='ID Ref']")
+	WebElement appID;
 	
 	
+
+	@FindBy (xpath = "//div[@class='sidebar clearfix ng-scope']//child::a[@href='#agentTransactions']")
+	WebElement account_Transaction;
 	
 	
 	public void pageHeaderTest()
@@ -73,6 +78,16 @@ public class OpenApplicationPage extends TestBase
 		return PageHeader;
 	}
 	
+	public String getApplicantID()
+	{
+		wait = new WebDriverWait(driver,100);
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		
+		expandApplication.click();
+		String ApplicantID = appID.getText();
+		return ApplicantID;
+	}
+	
 	
 	public  CreateApplicationPage newApplicationPage()
 	{
@@ -83,5 +98,17 @@ public class OpenApplicationPage extends TestBase
 		wait.until(ExpectedConditions.visibilityOf(newApplication));
 		newApplication.click();
 		return new CreateApplicationPage();
+	}
+	
+	
+	public AgentTransactionPage agentTransaction()
+	{
+		wait = new WebDriverWait(driver,100);
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		wait.until(ExpectedConditions.visibilityOf(sideMenu));
+		sideMenu.click();
+		wait.until(ExpectedConditions.visibilityOf(account_Transaction));
+		account_Transaction.click();
+		return new AgentTransactionPage();
 	}
 }
