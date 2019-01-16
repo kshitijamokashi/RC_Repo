@@ -107,7 +107,8 @@ public class CreateApplicationPage extends TestBase
 	@FindBy(xpath = "//label[contains(text(),'Proposed move date*')]")
 	WebElement label;
 	
-	public QuickStepOnePage FullReportAgentToPurAgentFill(String f_Report, String p_method)
+	public QuickStepOnePage FullReportAgentToPurAgentFill(String f_Report, String p_method, String filledBy, 
+															String p_Code)
 	{
 		js = (JavascriptExecutor)driver;
 		wait = new WebDriverWait (driver,100); 
@@ -121,12 +122,12 @@ public class CreateApplicationPage extends TestBase
 		PurType.selectByVisibleText(p_method);
 		
 		Select Filling = new Select(fillBy);
-		Filling.selectByVisibleText("I want to enter the full details of applicant now");
+		Filling.selectByVisibleText(filledBy);
 		
 		
-		propertyAddress.sendKeys("L118LZ");
+		propertyAddress.sendKeys(p_Code);
 		wait.until(ExpectedConditions.elementToBeClickable(find));
-		//find.click();
+		
 		js.executeScript("arguments[0].click();",find);
 		
 		wait.until(ExpectedConditions.visibilityOf(addList));
