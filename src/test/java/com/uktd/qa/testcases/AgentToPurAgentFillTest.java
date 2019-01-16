@@ -3,6 +3,7 @@ package com.uktd.qa.testcases;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.uktd.qa.base.TestBase;
@@ -15,6 +16,7 @@ import com.uktd.qa.pages.QuickStepOnePage;
 import com.uktd.qa.pages.StepFourPage;
 import com.uktd.qa.pages.StepThreePage;
 import com.uktd.qa.pages.StepTwoPage;
+import com.uktd.qa.util.TestUtil;
 
 public class AgentToPurAgentFillTest extends TestBase 
 {
@@ -36,14 +38,28 @@ public class AgentToPurAgentFillTest extends TestBase
 	
  
 	
-  @Test
-  public void FullReportAgentToPurAgentFill() 
+	@DataProvider
+	public Object[][] getAddAgentToPurchaseFRApplicantData()
+	{
+		Object data[][] = TestUtil.getTestData("DataPool2");
+		return data;
+	}
+
+
+
+  @Test(dataProvider = "getAddAgentToPurchaseFRApplicantData")
+  public void FullReportAgentToPurAgentFill(String f_Report, String p_method, String filledBy, 
+											String p_Code, String a_Address, String d_MoveIn,
+											String t_Period, String m_Rent, String r_Share, String a_Title, String a_Name,
+											String a_MiddleName, String a_SurName, String a_MaidenName, 
+											String a_DOB, String m_Status, String h_Phone, String w_Phone,String a_Mobile, String e_Mail,
+											String e_MailConfirm, String a_Proof, String no_Child, String no_ChildOver18) 
   {
 	  createApplication = new CreateApplicationPage();
-	  createApplication.FullReportAgentToPurAgentFill();
+	  createApplication.FullReportAgentToPurAgentFill(f_Report, p_method, filledBy, p_Code, a_Address, d_MoveIn, t_Period, m_Rent);
 	  
 	  quickstepOnePage = new QuickStepOnePage();
-	  quickstepOnePage.FillQuickStepOneFullReport();
+	  quickstepOnePage.FillQuickStepOneFullReport(r_Share, a_Title, a_Name, a_MiddleName, a_SurName, a_MaidenName,a_DOB, m_Status, h_Phone, w_Phone, a_Mobile, e_Mail, e_MailConfirm, a_Proof, no_Child, no_ChildOver18);
 	  
 	  stepTwoPage = new StepTwoPage();
 	  stepTwoPage.FriendsAndFamilyYesLA();
@@ -64,7 +80,7 @@ public class AgentToPurAgentFillTest extends TestBase
 	  agentTransactionPage = new AgentTransactionPage();
 	  String [] transValue = agentTransactionPage.getAgentToPurchaseTransation(ApplicantId);
 	  
-	  Assert.assertEquals(transValue[0],"Agent Purchase -Full Report-Swapnil Sunil Bhaksar("+ApplicantId+")");
+	  Assert.assertEquals(transValue[0],"Agent Purchase -Full Report-"+a_Name+" "+ a_MiddleName+" "+ a_SurName+"("+ApplicantId+")");
 	  Assert.assertEquals(transValue[1], "1");
 	  Assert.assertEquals(transValue[2], "10.00");
 	  Assert.assertEquals(transValue[3], "2.00");

@@ -108,14 +108,15 @@ public class CreateApplicationPage extends TestBase
 	WebElement label;
 	
 	public QuickStepOnePage FullReportAgentToPurAgentFill(String f_Report, String p_method, String filledBy, 
-															String p_Code)
+															String p_Code, String a_Address, String d_MoveIn,
+															String t_Period, String m_Rent)
 	{
 		js = (JavascriptExecutor)driver;
 		wait = new WebDriverWait (driver,100); 
 		
 		wait.until(ExpectedConditions.visibilityOf(applicationType));
 		Select AppType = new Select(applicationType);
-		AppType.selectByVisibleText("f_Report");
+		AppType.selectByVisibleText(f_Report);
 
 		wait.until(ExpectedConditions.visibilityOf(purchaseMethod));
 		Select PurType = new Select(purchaseMethod);
@@ -132,16 +133,16 @@ public class CreateApplicationPage extends TestBase
 		
 		wait.until(ExpectedConditions.visibilityOf(addList));
 		Select List = new Select(addList);
-		List.selectByVisibleText("30 Broad Lane Norris Green Liverpool");
+		List.selectByVisibleText(a_Address);
 		
-		moveInDate.sendKeys("31/01/2019");
+		moveInDate.sendKeys(d_MoveIn);
 		label.click();
 		
 		wait.until(ExpectedConditions.visibilityOf(tenancyPeriod));
 		Select Period = new Select(tenancyPeriod);
-		Period.selectByVisibleText("36 months");
+		Period.selectByVisibleText(t_Period);
 		
-		monthlyRent.sendKeys("1500");
+		monthlyRent.sendKeys(m_Rent);
 		
 
 		JavascriptExecutor js1 = (JavascriptExecutor)driver;

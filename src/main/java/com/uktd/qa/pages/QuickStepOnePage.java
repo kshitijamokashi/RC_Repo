@@ -134,42 +134,45 @@ public class QuickStepOnePage extends TestBase
 	WebElement label;
 	
 	
-	public StepTwoPage FillQuickStepOneFullReport() 
+	public StepTwoPage FillQuickStepOneFullReport(String r_Share, String a_Title, String a_Name,
+												String a_MiddleName, String a_SurName, String a_MaidenName, 
+												String a_DOB, String m_Status, String h_Phone, String w_Phone,String a_Mobile, String e_Mail,
+												String e_MailConfirm, String a_Proof, String no_Child, String no_ChildOver18) 
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		rentshare.clear();
-		rentshare.sendKeys("100");
+		rentshare.sendKeys(r_Share);
 		
 		select = new Select(title);
-		select.selectByVisibleText("Prof");
+		select.selectByVisibleText(a_Title);
 		
-		firstName.sendKeys("Swapnil");
+		firstName.sendKeys(a_Name);
 		
-		middleName.sendKeys("Sunil");
+		middleName.sendKeys(a_MiddleName);
 		
-		surname.sendKeys("Bhaksar");
+		surname.sendKeys(a_SurName);
 		
 		maleGender.click();
 		
-		maidenName.sendKeys("NA");
+		maidenName.sendKeys(a_MaidenName);
 		
-		dateOfBirth.sendKeys("28/01/1994");
+		dateOfBirth.sendKeys(a_DOB);
 		//label.click();
 		
 		select = new Select(maritalStatus);
-		select.selectByVisibleText("Married");
+		select.selectByVisibleText(m_Status);
 		
-		homePhone.sendKeys("02425261552");
+		homePhone.sendKeys(h_Phone);
 		
-		workPhone.sendKeys("0202255889");
+		workPhone.sendKeys(w_Phone);
 		
-		mobile.sendKeys("+91-9604328562");
+		mobile.sendKeys(a_Mobile);
 		
-		email.sendKeys("bhaskarswapnil22@gmail.com");
+		email.sendKeys(e_Mail);
 		
-		confirmEmail.sendKeys("bhaskarswapnil22@gmail.com");
+		confirmEmail.sendKeys(e_MailConfirm);
 		
-		applicantProof.sendKeys("Passport");
+		applicantProof.sendKeys(a_Proof);
 	
 		js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",nonSmoker);
@@ -178,9 +181,9 @@ public class QuickStepOnePage extends TestBase
 		
 		js.executeScript("arguments[0].click();",noAdverseData);
 		
-		noOfChild.sendKeys("2");
+		noOfChild.sendKeys(no_Child);
 		
-		childOver18.sendKeys("1");
+		childOver18.sendKeys(no_ChildOver18);
 		
 		tandC.click();
 		

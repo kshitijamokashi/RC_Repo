@@ -49,15 +49,15 @@ public class TestBase
  		
  			FileInputStream ip;
  			//For office machine
- 				ip = new FileInputStream("C:\\Users\\swapnilb\\workspace\\UKTD-MAVEN\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
+ 				/*ip = new FileInputStream("C:\\Users\\swapnilb\\workspace\\UKTD-MAVEN\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
  				prop.load(ip);
- 			
+ 			*/
  			
  			
  			//For Personal Machine 
- 			/*ip = new FileInputStream("C:\\Users\\swapnil\\eclipse-workspace\\UKTD_Maven\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
+ 			ip = new FileInputStream("C:\\Users\\swapnil\\eclipse-workspace\\UKTD_Maven\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
  				prop.load(ip);
-		 */
+		 
  			
 			
 		}catch(FileNotFoundException e)

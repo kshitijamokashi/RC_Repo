@@ -2,6 +2,7 @@ package com.uktd.qa.pages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -39,13 +40,14 @@ public class CompleteApplication extends TestBase
 			
 	public void finishApplication() {
 	wait = new WebDriverWait(driver, 100);
+	action = new Actions(driver);
 
 	finishButton.sendKeys(Keys.RETURN);
 	wait.until(ExpectedConditions.visibilityOf(popupFinish));
 	popupFinish.sendKeys(Keys.RETURN);
 	
 	wait.until(ExpectedConditions.invisibilityOf(loader));
-	sideMenu.click();
+	action.moveToElement(sideMenu).build().perform();
 	wait.until(ExpectedConditions.visibilityOf(openapplication));
 	openapplication.click();
 	}
