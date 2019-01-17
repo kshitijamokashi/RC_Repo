@@ -34,8 +34,7 @@ public class TestUtil extends TestBase
 		try {
 			if(machineName.equalsIgnoreCase("office")) 
 			{
-			file = new FileInputStream("C:\\Users\\swapnilb\\workspace"
-					+ "\\UKTD-Maven\\src\\main\\java\\com\\uktd\\qa\\testdata\\AddAgent.xlsx");
+			file = new FileInputStream("C:\\Users\\swapnilb\\workspace\\Scripts_uktd\\UKTD-MAVEN\\src\\main\\java\\com\\uktd\\qa\\testdata\\AddAgent.xlsx");
 			}
 			
 			else if(machineName.equalsIgnoreCase("personal")) 

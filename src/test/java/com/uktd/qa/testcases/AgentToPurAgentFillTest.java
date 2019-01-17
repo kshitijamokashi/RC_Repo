@@ -30,14 +30,14 @@ public class AgentToPurAgentFillTest extends TestBase
 	CompleteApplication completeApplication;
 	AgentTransactionPage agentTransactionPage;
 
-	
+
 	public AgentToPurAgentFillTest()
 	{
 		super();
 	}
-	
- 
-	
+
+
+
 	@DataProvider
 	public Object[][] getAddAgentToPurchaseFRApplicantData()
 	{
@@ -47,67 +47,80 @@ public class AgentToPurAgentFillTest extends TestBase
 
 
 
-  @Test(dataProvider = "getAddAgentToPurchaseFRApplicantData")
-  public void FullReportAgentToPurAgentFill(String f_Report, String p_method, String filledBy, 
-											String p_Code, String a_Address, String d_MoveIn,
-											String t_Period, String m_Rent, String r_Share, String a_Title, String a_Name,
-											String a_MiddleName, String a_SurName, String a_MaidenName, 
-											String a_DOB, String m_Status, String h_Phone, String w_Phone,String a_Mobile, String e_Mail,
-											String e_MailConfirm, String a_Proof, String no_Child, String no_ChildOver18) 
- 
-  {
-	  createApplication = new CreateApplicationPage();
-	  createApplication.FullReportAgentToPurAgentFill(f_Report, p_method, filledBy, p_Code, a_Address, d_MoveIn, t_Period, m_Rent);
-	  
-	  quickstepOnePage = new QuickStepOnePage();
-	  quickstepOnePage.FillQuickStepOneFullReport(r_Share, a_Title, a_Name, a_MiddleName, a_SurName, a_MaidenName,a_DOB, m_Status, h_Phone, w_Phone, a_Mobile, e_Mail, e_MailConfirm, a_Proof, no_Child, no_ChildOver18);
-	  
-	  stepTwoPage = new StepTwoPage();
-	  stepTwoPage.FriendsAndFamilyYesLA();
-	  
-	  stepThreePage = new StepThreePage();
-	  stepThreePage.fillStepThree();
-	  
-	  stepFourPage = new StepFourPage();
-	  stepFourPage.unemployed();
-	  
-	  completeApplication = new CompleteApplication();
-	  completeApplication.finishApplication();
-	  
-	  openApplication = new OpenApplicationPage();
-	  String ApplicantId =  openApplication.getApplicantID();
-	  openApplication.agentTransaction();
-	  
-	  agentTransactionPage = new AgentTransactionPage();
-	  String [] transValue = agentTransactionPage.getAgentToPurchaseTransation(ApplicantId);
-	  
-	  Assert.assertEquals(transValue[0],"Agent Purchase -Full Report-"+a_Name+" "+ a_MiddleName+" "+ a_SurName+"("+ApplicantId+")");
-	  Assert.assertEquals(transValue[1], "1");
-	  Assert.assertEquals(transValue[2], "10.00");
-	  Assert.assertEquals(transValue[3], "2.00");
-	  Assert.assertEquals(transValue[4], "12.00");
-  }
-  
-  
-  
-  @BeforeMethod
-  public void beforeMethod() 
-  {
-	  initialization();
-	  
-	  loginpage = new LoginPage();
-	  loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
-	
-	  openApplication = new OpenApplicationPage();
-	  openApplication.newApplicationPage();
-	  
-  }
+	@Test(dataProvider = "getAddAgentToPurchaseFRApplicantData")
+	public void FullReportAgentToPurAgentFill(String f_Report, String p_method, String filledBy, 
+			String p_Code, String a_Address, String d_MoveIn,
+			String t_Period, String m_Rent, String r_Share, String a_Title, String a_Name,
+			String a_MiddleName, String a_SurName, String a_MaidenName, 
+			String a_DOB, String m_Status, String h_Phone, String w_Phone,String a_Mobile, String e_Mail,
+			String e_MailConfirm, String a_Proof, String no_Child, String no_ChildOver18,
+			String c_LivivngWith, String c_PostCode, String c_Address, 
+			String c_MoveIn, String p_MoveIn, String p_MoveOut, String p_Postcode,
+			String p_Address, String la_Name, String la_Postcode, String la_Address, 
+			String la_Fax, String la_Titile, String la_FName, 
+			String la_lName, String la_Phone, String la_Mobile, 
+			String la_Email, String mo_Rent, String p_Type, String s_Code, String a_No, 
+			String k_Title, String k_Name, String k_SName, String k_PostCode, 
+			String k_Address, String k_Phone, String k_Mobile, String k_Email, 
+			String k_RelationShip, String k_YOK) 
 
-  
-  @AfterMethod
-  public void afterMethod() 
-  {
-	  driver.close();
-  }
+	{
+		createApplication = new CreateApplicationPage();
+		createApplication.FullReportAgentToPurAgentFill(f_Report, p_method, filledBy, p_Code, a_Address, d_MoveIn, t_Period, m_Rent);
+
+		quickstepOnePage = new QuickStepOnePage();
+		quickstepOnePage.FillQuickStepOneFullReport(r_Share, a_Title, a_Name, a_MiddleName, a_SurName, a_MaidenName,a_DOB, m_Status, h_Phone,
+				w_Phone, a_Mobile, e_Mail, e_MailConfirm, a_Proof, no_Child, no_ChildOver18);
+
+		stepTwoPage = new StepTwoPage();
+		stepTwoPage.FriendsAndFamilyYesLA(c_LivivngWith, c_PostCode, c_Address, c_MoveIn, p_MoveIn, p_MoveOut,p_Postcode,
+				p_Address, la_Name, la_Postcode, la_Address, la_Fax, la_Titile, la_FName, 
+				la_lName,  la_Phone, la_Mobile, la_Email,  mo_Rent,  p_Type, s_Code, a_No);
+
+		stepThreePage = new StepThreePage();
+		stepThreePage.fillStepThree( k_Title, k_Name,  k_SName, k_PostCode, k_Address, k_Phone,  k_Mobile, k_Email, 
+				k_RelationShip,  k_YOK);
+
+		stepFourPage = new StepFourPage();
+		stepFourPage.unemployed();
+
+		completeApplication = new CompleteApplication();
+		completeApplication.finishApplication();
+
+		openApplication = new OpenApplicationPage();
+		String ApplicantId =  openApplication.getApplicantID();
+		openApplication.agentTransaction();
+
+		agentTransactionPage = new AgentTransactionPage();
+		String [] transValue = agentTransactionPage.getAgentToPurchaseTransation(ApplicantId);
+
+		Assert.assertEquals(transValue[0],"Agent Purchase -Full Report-"+a_Name+" "+ a_MiddleName+" "+ a_SurName+"("+ApplicantId+")");
+		Assert.assertEquals(transValue[1], "1");
+		Assert.assertEquals(transValue[2], "10.00");
+		Assert.assertEquals(transValue[3], "2.00");
+		Assert.assertEquals(transValue[4], "12.00");
+	}
+
+
+
+	@BeforeMethod
+	public void beforeMethod() 
+	{
+		initialization();
+
+		loginpage = new LoginPage();
+		loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
+
+		openApplication = new OpenApplicationPage();
+		openApplication.newApplicationPage();
+
+	}
+
+
+	@AfterMethod
+	public void afterMethod() 
+	{
+		driver.close();
+	}
 
 }

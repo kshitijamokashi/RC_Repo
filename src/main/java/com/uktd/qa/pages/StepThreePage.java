@@ -13,7 +13,7 @@ import com.uktd.qa.base.TestBase;
 
 public class StepThreePage extends TestBase
 {
-	
+
 	public StepThreePage()
 	{
 		PageFactory.initElements(driver, this);
@@ -34,7 +34,7 @@ public class StepThreePage extends TestBase
 
 	@FindBy (xpath = "//*[contains(text(),'Find')]")
 	WebElement findButton;
-	
+
 	@FindBy (xpath = "//*[@id='addressList']")
 	WebElement addresslist;
 
@@ -52,13 +52,13 @@ public class StepThreePage extends TestBase
 
 	@FindBy (xpath = "//*[@name='yearsKnown']")
 	WebElement yearsKnown;
-	
+
 	@FindBy (xpath = "//*[@type='checkbox']")
 	WebElement consentCheckbox;
-	
+
 	@FindBy(xpath="//*[@type='submit']")
 	WebElement nextButton;
-	
+
 	@FindBy (xpath = "//*[@id='progressing']")
 	WebElement loader;
 
@@ -66,51 +66,54 @@ public class StepThreePage extends TestBase
 	WebElement date;
 
 
-	public StepFourPage fillStepThree(){
+	public StepFourPage fillStepThree(String k_Title, String k_Name, String k_SName, String k_PostCode, 
+			String k_Address, String k_Phone, String k_Mobile, String k_Email, 
+			String k_RelationShip, String k_YOK )
+	{
 		wait = new WebDriverWait(driver,200);
 
 		wait.until(ExpectedConditions.invisibilityOf(loader));
-		
+
 		wait.until(ExpectedConditions.visibilityOf(kinTitle));
-		
-		firstName.sendKeys("FirstName");
-		
-		surname.sendKeys("Khan");
-		
-		postCode.sendKeys("pr56bl");
-		
+
+		firstName.sendKeys(k_Name);
+
+		surname.sendKeys(k_SName);
+
+		postCode.sendKeys(k_PostCode);
+
 		js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",findButton);
 		wait.until(ExpectedConditions.visibilityOf(addresslist));
 		select =new Select(addresslist);
-		select.selectByVisibleText("UK Tennant Data Unit 9-10 South Preston Office Village Cuerden Way Bamber Bridge Preston");
-		phone.sendKeys("02426261552");
-		
-		mobile.sendKeys("9604328562");
-		
-		email.sendKeys("vk@bits.com");
-		
-		relationship.sendKeys("Friends");
-		
+		select.selectByVisibleText(k_Address);
+		phone.sendKeys(k_Phone);
+
+		mobile.sendKeys(k_Mobile);
+
+		email.sendKeys(k_Email);
+
+		relationship.sendKeys(k_RelationShip);
+
 		yearsKnown.clear();
-		yearsKnown.sendKeys("4");
+		yearsKnown.sendKeys(k_YOK);
 
 		if(!consentCheckbox.isSelected()) 
-			{
+		{
 			js.executeScript("arguments[0].click();",consentCheckbox);	
-		
-			}
+
+		}
 		if(kinTitle.isEnabled())
 		{
-		select = new Select(kinTitle);
-		select.selectByVisibleText("Mrs");
+			select = new Select(kinTitle);
+			select.selectByVisibleText(k_Title);
 		}
-		
-		
+
+
 		nextButton.sendKeys(Keys.RETURN);
 		return new StepFourPage();
 	}
 
-	
-	
+
+
 }
