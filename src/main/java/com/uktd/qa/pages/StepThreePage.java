@@ -20,7 +20,7 @@ public class StepThreePage extends TestBase
 	}
 
 
-	@FindBy (xpath = "//*[@id ='titleid']")
+	@FindBy (xpath = "//*[@id='titleid']")
 	WebElement kinTitle;
 
 	@FindBy (xpath = "//*[@name='firstName']")
