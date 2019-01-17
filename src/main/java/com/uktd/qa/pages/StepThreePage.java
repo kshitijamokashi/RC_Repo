@@ -75,6 +75,9 @@ public class StepThreePage extends TestBase
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 
 		wait.until(ExpectedConditions.visibilityOf(kinTitle));
+		
+		select = new Select(kinTitle);
+		select.selectByVisibleText(k_Title);
 
 		firstName.sendKeys(k_Name);
 
@@ -103,13 +106,7 @@ public class StepThreePage extends TestBase
 			js.executeScript("arguments[0].click();",consentCheckbox);	
 
 		}
-		if(kinTitle.isEnabled())
-		{
-			select = new Select(kinTitle);
-			select.selectByVisibleText(k_Title);
-		}
-
-
+		
 		nextButton.sendKeys(Keys.RETURN);
 		return new StepFourPage();
 	}
