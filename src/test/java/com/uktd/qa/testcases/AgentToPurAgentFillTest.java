@@ -13,6 +13,7 @@ import com.uktd.qa.pages.CreateApplicationPage;
 import com.uktd.qa.pages.LoginPage;
 import com.uktd.qa.pages.OpenApplicationPage;
 import com.uktd.qa.pages.QuickStepOnePage;
+import com.uktd.qa.pages.StepFivePage;
 import com.uktd.qa.pages.StepFourPage;
 import com.uktd.qa.pages.StepThreePage;
 import com.uktd.qa.pages.StepTwoPage;
@@ -29,7 +30,7 @@ public class AgentToPurAgentFillTest extends TestBase
 	StepFourPage stepFourPage;
 	CompleteApplication completeApplication;
 	AgentTransactionPage agentTransactionPage;
-
+	StepFivePage stepFivePage;
 
 	public AgentToPurAgentFillTest()
 	{
@@ -41,7 +42,7 @@ public class AgentToPurAgentFillTest extends TestBase
 	@DataProvider
 	public Object[][] getAddAgentToPurchaseFRApplicantData()
 	{
-		Object data[][] = TestUtil.getTestData("DataPool2");
+		Object data[][] = TestUtil.getTestData("F&F-Yes-LA&Unemployed");
 		return data;
 	}
 
@@ -62,7 +63,8 @@ public class AgentToPurAgentFillTest extends TestBase
 			String la_Email, String mo_Rent, String p_Type, String s_Code, String a_No, 
 			String k_Title, String k_Name, String k_SName, String k_PostCode, 
 			String k_Address, String k_Phone, String k_Mobile, String k_Email, 
-			String k_RelationShip, String k_YOK) 
+			String k_RelationShip, String k_YOK, String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support,
+			String d_Allowance, String o_Income, String disc ) 
 
 	{
 		createApplication = new CreateApplicationPage();
@@ -82,8 +84,12 @@ public class AgentToPurAgentFillTest extends TestBase
 				k_RelationShip,  k_YOK);
 
 		stepFourPage = new StepFourPage();
-		stepFourPage.unemployed();
+		stepFourPage.unemployed(emptype, insurance_No, f_Tax,  h_Benifits,  i_Support, d_Allowance, o_Income, disc);
 
+		stepFivePage = new StepFivePage();
+		stepFivePage.fillStepFive();
+		
+		
 		completeApplication = new CompleteApplication();
 		completeApplication.finishApplication();
 

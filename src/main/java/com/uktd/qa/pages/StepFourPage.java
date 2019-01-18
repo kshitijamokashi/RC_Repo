@@ -181,18 +181,18 @@ public class StepFourPage extends TestBase
 	WebElement date;
 	
 	
-	public void add_income() 
+	public void add_income(String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc ) 
 	{
-		familyTaxCredit.sendKeys("100");
-		housingBenifit.sendKeys("200");
-		incomeSupport.sendKeys("300");
-		disabilityincome.sendKeys("400");
-		otherIncome.sendKeys("500");
-		description.sendKeys("Pension");
+		familyTaxCredit.sendKeys(f_Tax);
+		housingBenifit.sendKeys(h_Benifits);
+		incomeSupport.sendKeys(i_Support);
+		disabilityincome.sendKeys(d_Allowance);
+		otherIncome.sendKeys(o_Income);
+		description.sendKeys(disc);
 	}
 
 	//Student
-	public void Student() 
+	public void Student(String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc) 
 	{
 		wait = new WebDriverWait(driver,200);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
@@ -200,7 +200,7 @@ public class StepFourPage extends TestBase
 
 		insuranceNo.sendKeys("IND2018");
 
-		add_income();
+		add_income(f_Tax, h_Benifits, i_Support, d_Allowance,  o_Income, disc);
 
 		if(empType.isEnabled())
 		{ 
@@ -213,7 +213,7 @@ public class StepFourPage extends TestBase
 	}
 
 	//Employed
-	public void Employed() 
+	public void Employed(String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc) 
 	{
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
@@ -260,12 +260,12 @@ public class StepFourPage extends TestBase
 		
 		annualBonus.sendKeys("1500");
 		
-		add_income();
+		add_income(f_Tax, h_Benifits, i_Support, d_Allowance,  o_Income, disc);
 		updateButton.sendKeys(Keys.RETURN);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 	}
 
-	public void Self_Emp()
+	public void Self_Emp(String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc)
 	{
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
@@ -315,30 +315,30 @@ public class StepFourPage extends TestBase
 		
 		fax.sendKeys("887787788787");
 
-		add_income();
+		add_income(f_Tax, h_Benifits, i_Support, d_Allowance,  o_Income, disc);
 		
 		updateButton.sendKeys(Keys.RETURN);
 		wait.until(ExpectedConditions.invisibilityOf(loader));	
 	}
 
 	//UnEmployed
-	public void unemployed() 
+	public void unemployed(String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc ) 
 	{
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 
 		select =new Select(empType);
-		select.selectByVisibleText("Unemployed");
+		select.selectByVisibleText(emptype);
 
-		insuranceNo.sendKeys("IND2018");
+		insuranceNo.sendKeys(insurance_No);
 
-		add_income();
+		add_income(f_Tax, h_Benifits, i_Support, d_Allowance,  o_Income, disc);
 
 		updateButton.sendKeys(Keys.RETURN);
 		wait.until(ExpectedConditions.invisibilityOf(loader));	
 	}
 
-	public void own_means() 
+	public void own_means(String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc) 
 	{
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
@@ -356,7 +356,7 @@ public class StepFourPage extends TestBase
 
 		Intrest.sendKeys("500");
 
-		add_income();
+		add_income(f_Tax, h_Benifits, i_Support, d_Allowance,  o_Income, disc);
 
 		updateButton.sendKeys(Keys.RETURN);
 		wait.until(ExpectedConditions.invisibilityOf(loader));	
