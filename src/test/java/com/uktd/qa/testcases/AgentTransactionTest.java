@@ -19,7 +19,7 @@ import com.uktd.qa.pages.StepThreePage;
 import com.uktd.qa.pages.StepTwoPage;
 import com.uktd.qa.util.TestUtil;
 
-public class AgentToPurAgentFillTest extends TestBase 
+public class AgentTransactionTest extends TestBase
 {
 	LoginPage loginpage;
 	OpenApplicationPage openApplication;
@@ -32,7 +32,7 @@ public class AgentToPurAgentFillTest extends TestBase
 	AgentTransactionPage agentTransactionPage;
 	StepFivePage stepFivePage;
 
-	public AgentToPurAgentFillTest()
+	public AgentTransactionTest()
 	{
 		super();
 	}
@@ -81,7 +81,7 @@ public class AgentToPurAgentFillTest extends TestBase
 
 		stepThreePage = new StepThreePage();
 		stepThreePage.fillStepThree( k_Title, k_Name,  k_SName, k_PostCode, k_Address, k_Phone,  k_Mobile, k_Email, 
-				k_RelationShip,  k_YOK);
+										k_RelationShip,  k_YOK);
 
 		stepFourPage = new StepFourPage();
 		stepFourPage.unemployed(emptype, insurance_No, f_Tax,  h_Benifits,  i_Support, d_Allowance, o_Income, disc);
@@ -93,7 +93,7 @@ public class AgentToPurAgentFillTest extends TestBase
 		completeApplication = new CompleteApplication();
 		completeApplication.finishApplication();
 
-	/*	openApplication = new OpenApplicationPage();
+		openApplication = new OpenApplicationPage();
 		String ApplicantId =  openApplication.getApplicantID();
 		openApplication.agentTransaction();
 
@@ -105,8 +105,16 @@ public class AgentToPurAgentFillTest extends TestBase
 		Assert.assertEquals(transValue[2], "10.00");
 		Assert.assertEquals(transValue[3], "2.00");
 		Assert.assertEquals(transValue[4], "12.00");
-	*/
-		}
+		
+		
+		agentTransactionPage = new AgentTransactionPage();
+		String [] immigValue = agentTransactionPage.getImmigrationRebateTransaction(ApplicantId);
+		Assert.assertEquals(transValue[0],"Agent Purchase -Full Report-"+a_Name+" "+ a_MiddleName+" "+ a_SurName+"("+ApplicantId+")");
+		Assert.assertEquals(transValue[1], "1");
+		Assert.assertEquals(transValue[2], "10.00");
+		Assert.assertEquals(transValue[3], "2.00");
+		Assert.assertEquals(transValue[4], "12.00");
+	}
 
 
 
@@ -130,4 +138,6 @@ public class AgentToPurAgentFillTest extends TestBase
 		driver.close();
 	}
 
+	
+	
 }

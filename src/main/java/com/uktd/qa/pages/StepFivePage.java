@@ -57,9 +57,19 @@ public class StepFivePage extends TestBase
 		js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",radio_Passport);
 		js.executeScript("arguments[0].click();",radio_Passport);
+	
+		/*	
+		try {
+			Thread.sleep(500);;
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	*/	
+		//wait.until(ExpectedConditions.elementToBeClickable(passportUpload));
 		
-		wait.until(ExpectedConditions.visibilityOf(passportUpload));
-		passportUpload.sendKeys("C:\\Users\\Public\\Pictures\\Sample Pictures\\Tulips.jpg");
+		
+		passportUpload.sendKeys("C:\\Users\\Public\\Pictures\\Sample Pictures\\Desert.jpg");
 		
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 		

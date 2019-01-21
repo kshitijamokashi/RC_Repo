@@ -30,6 +30,8 @@ public class AgentTransactionPage extends TestBase
 
 		System.out.println(trnacation_Description+" , "+report_Quantity+" , "+net_Amount+" , "+vat_Amount+" , "+total_Amount);
 		
+	
+		
 		String [] values = new String[5];
 		values [0] = trnacation_Description;
 		values [1] = report_Quantity;
@@ -53,6 +55,8 @@ public class AgentTransactionPage extends TestBase
 
 		System.out.println(trnacation_Description+" , "+report_Quantity+" , "+net_Amount+" , "+vat_Amount+" , "+total_Amount);
 
+		
+		
 		String [] values = new String[5];
 		values [0] = trnacation_Description;
 		values [1] = report_Quantity;
@@ -78,6 +82,8 @@ public class AgentTransactionPage extends TestBase
 
 		System.out.println(trnacation_Description+" , "+report_Quantity+" , "+net_Amount+" , "+vat_Amount+" , "+total_Amount);
 
+	
+		
 		String [] values = new String[5];
 		values [0] = trnacation_Description;
 		values [1] = report_Quantity;
@@ -103,6 +109,8 @@ public class AgentTransactionPage extends TestBase
 
 		System.out.println(trnacation_Description+" , "+report_Quantity+" , "+net_Amount+" , "+vat_Amount+" , "+total_Amount);
 
+	
+		
 		String [] values = new String[5];
 		values [0] = trnacation_Description;
 		values [1] = report_Quantity;
