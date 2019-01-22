@@ -13,9 +13,11 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,6 +41,8 @@ public class TestBase
 	public static EventFiringWebDriver e_driver;
 	public	Actions action;
 	
+	
+	
 	public TestBase()
 	{
 		
@@ -49,15 +53,15 @@ public class TestBase
  		
  			FileInputStream ip;
  			//For office machine
- 				ip = new FileInputStream("C:\\Users\\swapnilb\\workspace\\Scripts_uktd\\UKTD-MAVEN\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
+ 				/*ip = new FileInputStream("C:\\Users\\swapnilb\\workspace\\Scripts_uktd\\UKTD-MAVEN\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
  				prop.load(ip);
- 			
+ 			*/
  			
  			
  			//For Personal Machine 
- 			/*ip = new FileInputStream("C:\\Users\\swapnil\\eclipse-workspace\\UKTD_Maven\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
+ 			ip = new FileInputStream("C:\\Users\\swapnil\\eclipse-workspace\\UKTD_Maven\\src\\main\\java\\com\\uktd\\qa\\config\\config.properties");
  				prop.load(ip);
-		 */
+		 
  			
 			
 		}catch(FileNotFoundException e)
@@ -127,7 +131,17 @@ public class TestBase
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_Load_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
-	
-	
+		
+	}
+	public static void logoutCurrentSessionandOpenNewWindow(String URL)
+	{
+		//Quit current session
+				driver.quit();
+		
+		//Open new browser session for applicant login
+				driver=new ChromeDriver();
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+				driver.manage().window().maximize();
+				driver.navigate().to(URL);
 	}
 }

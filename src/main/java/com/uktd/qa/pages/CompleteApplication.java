@@ -38,7 +38,7 @@ public class CompleteApplication extends TestBase
 	@FindBy (xpath = "//*[@id='progressing']")
 	WebElement loader;
 			
-	public void finishApplication() {
+	public OpenApplicationPage finishApplication() {
 	wait = new WebDriverWait(driver, 100);
 	action = new Actions(driver);
 
@@ -50,6 +50,7 @@ public class CompleteApplication extends TestBase
 	action.moveToElement(sideMenu).build().perform();
 	wait.until(ExpectedConditions.visibilityOf(openapplication));
 	openapplication.click();
+	return new OpenApplicationPage();
 	}
 	
 	
