@@ -70,15 +70,18 @@ public class AgentTransactionTest extends TestBase
 		createApplication = new CreateApplicationPage();
 		createApplication.FullReportAgentToPurAgentFill(f_Report, p_method, filledBy, p_Code, a_Address, d_MoveIn, t_Period, m_Rent);
 
+		
 		quickstepOnePage = new QuickStepOnePage();
 		quickstepOnePage.FillQuickStepOneFullReport(r_Share, a_Title, a_Name, a_MiddleName, a_SurName, a_MaidenName,a_DOB, m_Status, h_Phone,
 				w_Phone, a_Mobile, e_Mail, e_MailConfirm, a_Proof, no_Child, no_ChildOver18);
 
+		
 		stepTwoPage = new StepTwoPage();
 		stepTwoPage.FriendsAndFamilyYesLA(c_LivivngWith, c_PostCode, c_Address, c_MoveIn, p_MoveIn, p_MoveOut,p_Postcode,
 				p_Address, la_Name, la_Postcode, la_Address, la_Fax, la_Titile, la_FName, 
 				la_lName,  la_Phone, la_Mobile, la_Email,  mo_Rent,  p_Type, s_Code, a_No);
 
+		
 		stepThreePage = new StepThreePage();
 		stepThreePage.fillStepThree( k_Title, k_Name,  k_SName, k_PostCode, k_Address, k_Phone,  k_Mobile, k_Email, 
 										k_RelationShip,  k_YOK);
