@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-01-22T20:52:19Z" name="Default suite" finished-at="2019-01-22T20:55:27Z" duration-ms="187113">
+  <suite started-at="2019-01-23T20:30:03Z" name="Default suite" finished-at="2019-01-23T20:33:58Z" duration-ms="235277">
     <groups>
     </groups>
-    <test started-at="2019-01-22T20:52:19Z" name="Default test" finished-at="2019-01-22T20:55:27Z" duration-ms="187113">
+    <test started-at="2019-01-23T20:30:03Z" name="Default test" finished-at="2019-01-23T20:33:58Z" duration-ms="235277">
       <class name="com.uktd.qa.testcases.TenantToPurTenantFillFR">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-22T20:52:22Z" name="beforeMethod" finished-at="2019-01-22T20:53:21Z" duration-ms="58638" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-23T20:30:06Z" name="beforeMethod" finished-at="2019-01-23T20:30:54Z" duration-ms="48284" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="FullReportTenantToPurTenantFill(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-22T20:53:21Z" name="FullReportTenantToPurTenantFill" data-provider="getAddTenantToPurchaseTenantFillFRApplicantData" finished-at="2019-01-22T20:55:24Z" duration-ms="123326" status="FAIL">
+        <test-method signature="FullReportTenantToPurTenantFill(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-23T20:30:54Z" name="FullReportTenantToPurTenantFill" data-provider="getAddTenantToPurchaseTenantFillFRApplicantData" finished-at="2019-01-23T20:33:57Z" duration-ms="182811" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -135,130 +135,282 @@
                 <![CDATA[1]]>
               </value>
             </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Cannot locate an element using xpath=//button[contains(text(),'Next Step')]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.5', revision: 'd54ebd709a', time: '2018-11-06T11:42:16'
-System info: host: 'SWAPNIL-PC', ip: '192.168.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.1'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//button[contains(text(),'Next Step')]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.5', revision: 'd54ebd709a', time: '2018-11-06T11:42:16'
-System info: host: 'SWAPNIL-PC', ip: '192.168.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.1'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy15.sendKeys(Unknown Source)
-at com.uktd.qa.pages.AcceptTermsPage.goTonextStep(AcceptTermsPage.java:38)
-at com.uktd.qa.testcases.TenantToPurTenantFillFR.FullReportTenantToPurTenantFill(TenantToPurTenantFillFR.java:70)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.base/java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+            <param index="24">
+              <value>
+                <![CDATA[Currently Living with friends or family]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[M36GB]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[Apartment 4 Block B Alto Sillavan Way Salford]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[28/02/2011]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[28/02/2007]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[28/02/2011]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[M36GB]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[Apartment 45 Block B Alto Sillavan Way Salford]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[L118LZ]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[30 Broad Lane Norris Green Liverpool]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[123456890]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Miss]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[James]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Vilshere]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[9604328562]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[7020678830]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[amitbaghel@benchmarkitsolutions.com]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[1400]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Direct Debit]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[232323]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[12121121]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[Dr]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[Vasim]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[Khan]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[PR56BL]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[UK Tennant Data Unit 9-10 South Preston Office Village Cuerden Way Bamber Bridge Preston]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[2426261552]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[9604328562]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[vasimkhan@benchmarkitsolutions.com
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[Friend]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="55">
+              <value>
+                <![CDATA[IND2018]]>
+              </value>
+            </param>
+            <param index="56">
+              <value>
+                <![CDATA[Employed]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[Bemchmark IT Solutions India Pvt Ltd]]>
+              </value>
+            </param>
+            <param index="58">
+              <value>
+                <![CDATA[QA]]>
+              </value>
+            </param>
+            <param index="59">
+              <value>
+                <![CDATA[M36GB]]>
+              </value>
+            </param>
+            <param index="60">
+              <value>
+                <![CDATA[Apartment 3 Block B Alto Sillavan Way Salford]]>
+              </value>
+            </param>
+            <param index="61">
+              <value>
+                <![CDATA[02022556698]]>
+              </value>
+            </param>
+            <param index="62">
+              <value>
+                <![CDATA[000000000]]>
+              </value>
+            </param>
+            <param index="63">
+              <value>
+                <![CDATA[Miss]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[Tripti]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Poddar]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[02312545006]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[swapnilbhaskar@benchmarkitsolutions.com]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[QA]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[17/04/2017]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[280000]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[1500]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[400]]>
+              </value>
+            </param>
+            <param index="75">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="76">
+              <value>
+                <![CDATA[600]]>
+              </value>
+            </param>
+            <param index="77">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FullReportTenantToPurTenantFill -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-22T20:55:24Z" name="afterMethod" finished-at="2019-01-22T20:55:27Z" duration-ms="2048" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[chrome not reachable
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.5', revision: 'd54ebd709a', time: '2018-11-06T11:42:16'
-System info: host: 'SWAPNIL-PC', ip: '192.168.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\swapnil\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: e34e332552c801baffa9d972140ae441]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=71.0.3578.98)
-  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 0 milliseconds
-Build info: version: '3.141.5', revision: 'd54ebd709a', time: '2018-11-06T11:42:16'
-System info: host: 'SWAPNIL-PC', ip: '192.168.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.38.552522 (437e6fbedfa876..., userDataDir: C:\Users\swapnil\AppData\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 71.0.3578.98, webStorageEnabled: true}
-Session ID: e34e332552c801baffa9d972140ae441
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
-at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
-at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
-at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:442)
-at com.uktd.qa.testcases.TenantToPurTenantFillFR.afterMethod(TenantToPurTenantFillFR.java:90)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.base/java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
-at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-23T20:33:57Z" name="afterMethod" finished-at="2019-01-23T20:33:58Z" duration-ms="596" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

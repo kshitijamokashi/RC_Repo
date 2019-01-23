@@ -213,54 +213,61 @@ public class StepFourPage extends TestBase
 	}
 
 	//Employed
-	public void Employed(String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc) 
+	public void Employed(String insurance_No, String emptype, String c_Name, String dpartment, String c_Post, 
+						 String co_Address, String c_Phone, String c_Fax, String c_Title, String c_Fname, String c_Lname, 
+						 String c_Mobile, String c_Email, String position, String s_Date, String a_Salary, String a_Bonus, 
+						 String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc) 
 	{
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 		
+		insuranceNo.sendKeys(insurance_No);
+		
 		select =new Select(empType);
-		select.selectByVisibleText("Employed");
+		select.selectByVisibleText(emptype);
 
-		insuranceNo.sendKeys("IND2018");
 		
-		companyName.sendKeys("Bemchmark IT Solutions India Pvt Ltd");
 		
-		department.sendKeys("QA");
+		companyName.sendKeys(c_Name);
 		
-		companyPostCode.sendKeys("M36GB");
+		department.sendKeys(dpartment);
+		
+		companyPostCode.sendKeys(c_Post);
 		wait.until(ExpectedConditions.elementToBeClickable(findButton));
 		js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",findButton);
 		
 		wait.until(ExpectedConditions.visibilityOf(addressList));
 		Select list =new Select(addressList);
-		list.selectByVisibleText("Apartment 3 Block B Alto Sillavan Way Salford");
+		list.selectByVisibleText(co_Address);
 		
-		companyPhone.sendKeys("02022556698");
+		companyPhone.sendKeys(c_Phone);
 		
-		fax.sendKeys("000000000");
+		fax.sendKeys(c_Fax);
 		
 		select =new Select(contactTitle);
-		select.selectByVisibleText("Miss");
+		select.selectByVisibleText(c_Title);
 		
-		contactFirstName.sendKeys("Tripti");
+		contactFirstName.sendKeys(c_Fname);
 		
-		contactSurname.sendKeys("Poddar");
+		contactSurname.sendKeys(c_Lname);
 		
-		contactMobile.sendKeys("02312545006");
+		contactMobile.sendKeys(c_Mobile);
 		
-		contactEmail.sendKeys("tp@bits.com");
+		contactEmail.sendKeys(c_Email);
 		
-		jobTitle.sendKeys("QA");
+		jobTitle.sendKeys(position);
 		
-		jobStartDate.sendKeys("17/04/2017");
+		jobStartDate.sendKeys(s_Date);
 		date.click();
 		
-		annualSalary.sendKeys("280000");
+		annualSalary.sendKeys(a_Salary);
 		
-		annualBonus.sendKeys("1500");
+		annualBonus.sendKeys(a_Bonus);
+		
 		
 		add_income(f_Tax, h_Benifits, i_Support, d_Allowance,  o_Income, disc);
+		
 		updateButton.sendKeys(Keys.RETURN);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 	}
