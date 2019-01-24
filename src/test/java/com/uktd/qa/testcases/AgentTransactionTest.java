@@ -42,7 +42,7 @@ public class AgentTransactionTest extends TestBase
 	@DataProvider
 	public Object[][] getAddAgentToPurchaseFRApplicantData()
 	{
-		Object data[][] = TestUtil.getTestData("F&F-Yes-LA&Unemployed");
+		Object data[][] = TestUtil.getTestData("AgToPurAgFill>F&F-Yes-LA&Unemp");
 		return data;
 	}
 
@@ -72,7 +72,7 @@ public class AgentTransactionTest extends TestBase
 
 		
 		quickstepOnePage = new QuickStepOnePage();
-		quickstepOnePage.FillQuickStepOneFullReport(r_Share, a_Title, a_Name, a_MiddleName, a_SurName, a_MaidenName,a_DOB, m_Status, h_Phone,
+		quickstepOnePage.AgentFillQuickStepOneFullReport(r_Share, a_Title, a_Name, a_MiddleName, a_SurName, a_MaidenName,a_DOB, m_Status, h_Phone,
 				w_Phone, a_Mobile, e_Mail, e_MailConfirm, a_Proof, no_Child, no_ChildOver18);
 
 		

@@ -214,32 +214,34 @@ public class StepTwoPage extends TestBase
 	@FindBy (xpath = "//label[contains(text(),'Moved out date*')]")
 	WebElement labelPrevMoveOutDate;
 
-	public void landlord_section() 
+	public void landlord_section(String ll_PCode, String ll_Address, String ll_Fax, 
+								 String ll_Title, String ll_Name, String ll_Surname,
+								 String ll_PhoneNo, String ll_MobileNo, String ll_EmailAdd) 
 	{
 		wait = new WebDriverWait(driver, 100);
-		lLpostcode.sendKeys("L118LZ");
+		lLpostcode.sendKeys(ll_PCode);
 		lLpostcodeFind.click();
 
 		wait.until(ExpectedConditions.visibilityOf(lLAddlist));
 		//wait.until(ExpectedConditions.invisibilityOf(loader));
 		select = new Select(lLAddlist);
-		select.selectByVisibleText("30 Broad Lane Norris Green Liverpool");
+		select.selectByVisibleText(ll_Address);
 
-		fax.sendKeys("123456789");
+		fax.sendKeys(ll_Fax);
 
 
 		select = new Select(lLTitle);
-		select.selectByVisibleText("Mrs");
+		select.selectByVisibleText(ll_Title);
 
-		lLFirstName.sendKeys("Lucy");
+		lLFirstName.sendKeys(ll_Name);
 
-		lLSurname.sendKeys("Petrus");
+		lLSurname.sendKeys(ll_Surname);
 
-		lLPhone.sendKeys("9604328562");
+		lLPhone.sendKeys(ll_PhoneNo);
 
-		lLMobile.sendKeys("8855699878");
+		lLMobile.sendKeys(ll_MobileNo);
 
-		lLEmail.sendKeys("amitbaghel@benchmarkitsolutions.com");
+		lLEmail.sendKeys(ll_EmailAdd);
 	} 
 
 
@@ -335,7 +337,7 @@ public class StepTwoPage extends TestBase
 
 	}
 
-	//Friends And Family Yes		
+	//Friends And Family Yes LA		
 	public StepThreePage FriendsAndFamilyYesLA(String c_LivivngWith, String c_PostCode, String c_Address, 
 			String c_MoveIn, String p_MoveIn, String p_MoveOut, String p_Postcode,
 			String p_Address, String la_Name, String la_Postcode, String la_Address, 
@@ -379,5 +381,49 @@ public class StepTwoPage extends TestBase
 
 		return new StepThreePage();
 	}
+	
+	
+	//Friends And Family Yes LL		
+		public StepThreePage FriendsAndFamilyYesLL(String c_LivivngWith, String c_PostCode, String c_Address, 
+				String c_MoveIn, String p_MoveIn, String p_MoveOut, String p_Postcode,
+				String p_Address, String ll_PCode, String ll_Address, String ll_Fax, 
+				 String ll_Title, String ll_Name, String ll_Surname,
+				 String ll_PhoneNo, String ll_MobileNo, String ll_EmailAdd, String mo_Rent, String p_Type, String s_Code, String a_No )
+		{
+			wait = new WebDriverWait(driver,100);
+
+			wait.until(ExpectedConditions.invisibilityOf(loader));
+			wait.until(ExpectedConditions.visibilityOf(accStatus));
+			Select statusdrp =new Select(accStatus);
+			statusdrp.selectByVisibleText(c_LivivngWith);
+
+			wait.until(ExpectedConditions.visibilityOf(rentedLast6MonthYes));
+
+			js = (JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();",rentedLast6MonthYes);
+
+			wait.until(ExpectedConditions.visibilityOf(landlord));
+			js.executeScript("arguments[0].click();",landlord);
+
+
+			enter_current_address_info(c_PostCode, c_Address, c_MoveIn);
+
+
+			address_you_were_renting(p_MoveIn, p_MoveOut, p_Postcode, p_Address);
+
+			
+			landlord_section(ll_PCode, ll_Address,  ll_Fax, ll_Title,  ll_Name, ll_Surname, ll_PhoneNo,  ll_MobileNo,  ll_EmailAdd); 
+
+
+			enter_accommodation_details(mo_Rent, p_Type);
+
+
+			enter_bank_info(s_Code, a_No);
+
+
+			updateButton.sendKeys(Keys.RETURN);
+
+			return new StepThreePage();
+		}
 
 }

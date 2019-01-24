@@ -129,17 +129,18 @@ public class QuickStepOnePage extends TestBase
 	@FindBy(xpath ="//*[contains(text(),'Previous Accommodation Information' )]")
 	WebElement prevAccBlock;
 	
-	
 	@FindBy(xpath = "//label[contains(text(),'Date of Birth*')]")
 	WebElement label;
 	
+	@FindBy (xpath = "//*[@id='progressing']")
+	WebElement loader;
 	
-	public StepTwoPage FillQuickStepOneFullReport(String r_Share, String a_Title, String a_Name,
+	public StepTwoPage AgentFillQuickStepOneFullReport(String r_Share, String a_Title, String a_Name,
 												String a_MiddleName, String a_SurName, String a_MaidenName, 
 												String a_DOB, String m_Status, String h_Phone, String w_Phone,String a_Mobile, String e_Mail,
 												String e_MailConfirm, String a_Proof, String no_Child, String no_ChildOver18) 
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 100);
+		wait = new WebDriverWait(driver, 100);
 		rentshare.clear();
 		rentshare.sendKeys(r_Share);
 		
@@ -197,6 +198,56 @@ public class QuickStepOnePage extends TestBase
 		nextButton.sendKeys(Keys.RETURN);
 		return new StepTwoPage();
 
+	}
+	
+	public StepTwoPage TenantFillStepOneFullReport(String a_MiddleName, String a_MaidenName, 
+												   String a_DOB, String m_Status, String h_Phone, String w_Phone,
+												   String a_Proof, String no_Child, String no_ChildOver18)
+	{
+		wait = new WebDriverWait(driver, 100);
+		
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		middleName.sendKeys(a_MiddleName);
+		
+		maleGender.click();
+		
+		maidenName.sendKeys(a_MaidenName);
+		
+		dateOfBirth.sendKeys(a_DOB);
+		//label.click();
+		
+		select = new Select(maritalStatus);
+		select.selectByVisibleText(m_Status);
+		
+		homePhone.sendKeys(h_Phone);
+		
+		workPhone.sendKeys(w_Phone);
+		
+		applicantProof.sendKeys(a_Proof);
+	
+		js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();",nonSmoker);
+		
+		js.executeScript("arguments[0].click();",hasPets);
+		
+		js.executeScript("arguments[0].click();",noAdverseData);
+		
+		noOfChild.sendKeys(no_Child);
+		
+		childOver18.sendKeys(no_ChildOver18);
+		
+		tandC.click();
+		
+		wait.until(ExpectedConditions.visibilityOf(checkAll));
+		wait.until(ExpectedConditions.elementToBeClickable(checkAll));
+		js.executeScript("arguments[0].click();",checkAll);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(acceptTandC));
+		js.executeScript("arguments[0].click();",acceptTandC);
+		
+		nextButton.sendKeys(Keys.RETURN);
+		return new StepTwoPage();
+		
 	}
 	
 }

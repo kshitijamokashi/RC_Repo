@@ -17,7 +17,8 @@ public class StepFivePage extends TestBase
 	{
 		PageFactory.initElements(driver, this);
 	}
-	
+	@FindBy (xpath = "//div[@class='modal fade step5-popup ng-scope in']//ancestor::button[@type='button'][contains(text(),'Close')]")
+	WebElement popUpClose;
 	
 	@FindBy (xpath = "//div[@class = 'col-sm-6']//following::select")
 	WebElement countrydrp;
@@ -77,8 +78,52 @@ public class StepFivePage extends TestBase
 		js.executeScript("arguments[0].click();",noMRZLines);
 		
 		nextButton.sendKeys(Keys.RETURN);
+		
+		
 
 	}
+
+	public void applicantFillStepFive()
+	{
+		wait = new WebDriverWait(driver,100);
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		
+		popUpClose.sendKeys(Keys.RETURN);
+		
+		select = new Select(countrydrp);
+		select.selectByVisibleText("United Kingdom");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(radio_Passport));
+		
+		js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();",radio_Passport);
+		js.executeScript("arguments[0].click();",radio_Passport);
+	
+		/*	
+		try {
+			Thread.sleep(500);;
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	*/	
+		//wait.until(ExpectedConditions.elementToBeClickable(passportUpload));
+		
+		
+		passportUpload.sendKeys("C:\\Users\\Public\\Pictures\\Sample Pictures\\Desert.jpg");
+		
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		
+		wait.until(ExpectedConditions.elementToBeClickable(noMRZLines));
+		js.executeScript("arguments[0].click();",noMRZLines);
+		js.executeScript("arguments[0].click();",noMRZLines);
+		
+		nextButton.sendKeys(Keys.RETURN);
+		
+		
+
+	}
+	
 	
 	
 }

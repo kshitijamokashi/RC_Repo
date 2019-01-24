@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="129767" started-at="2019-01-23T06:05:21Z" finished-at="2019-01-23T06:07:31Z">
     <groups>
     </groups>
@@ -12,6 +13,18 @@
           </reporter-output>
         </test-method> <!-- beforeMethod -->
         <test-method status="FAIL" signature="FullReportAgentToPurAgentFill(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.uktd.qa.testcases.AgentToPurAgentFillTest@13deb50e]" name="FullReportAgentToPurAgentFill" duration-ms="98858" started-at="2019-01-23T06:05:50Z" data-provider="getAddAgentToPurchaseFRApplicantData" finished-at="2019-01-23T06:07:29Z">
+=======
+  <suite started-at="2019-01-23T20:30:03Z" name="Default suite" finished-at="2019-01-23T20:33:58Z" duration-ms="235277">
+    <groups>
+    </groups>
+    <test started-at="2019-01-23T20:30:03Z" name="Default test" finished-at="2019-01-23T20:33:58Z" duration-ms="235277">
+      <class name="com.uktd.qa.testcases.TenantToPurTenantFillFR">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-23T20:30:06Z" name="beforeMethod" finished-at="2019-01-23T20:30:54Z" duration-ms="48284" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="FullReportTenantToPurTenantFill(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-23T20:30:54Z" name="FullReportTenantToPurTenantFill" data-provider="getAddTenantToPurchaseTenantFillFRApplicantData" finished-at="2019-01-23T20:33:57Z" duration-ms="182811" status="PASS">
+>>>>>>> 9579946d004d846f853489375312ee9ffbff6336
           <params>
             <param index="0">
               <value>
@@ -20,12 +33,12 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[Agent to Purchase]]>
+                <![CDATA[Tenant to Purchase]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[I want to enter the full details of applicant now]]>
+                <![CDATA[Applicant to complete their own application online]]>
               </value>
             </param>
             <param index="3">
@@ -70,54 +83,54 @@
             </param>
             <param index="11">
               <value>
-                <![CDATA[Kisan]]>
+                <![CDATA[Mohite]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[Mohite]]>
+                <![CDATA[9604328562]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[NA]]>
+                <![CDATA[swapnilbhaskar@benchmarkitsolutions.com
+]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[28/01/1994]]>
+                <![CDATA[swapnilbhaskar@benchmarkitsolutions.com
+]]>
               </value>
             </param>
             <param index="15">
               <value>
-                <![CDATA[Married]]>
+                <![CDATA[Kisan]]>
               </value>
             </param>
             <param index="16">
               <value>
-                <![CDATA[02425261552]]>
+                <![CDATA[NA]]>
               </value>
             </param>
             <param index="17">
               <value>
-                <![CDATA[0202255881]]>
+                <![CDATA[28/01/1994]]>
               </value>
             </param>
             <param index="18">
               <value>
-                <![CDATA[9604328562]]>
+                <![CDATA[Married]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[swapnilbhaskar@benchmarkitsolutions.com
-]]>
+                <![CDATA[02425261552]]>
               </value>
             </param>
             <param index="20">
               <value>
-                <![CDATA[swapnilbhaskar@benchmarkitsolutions.com
-]]>
+                <![CDATA[0202255881]]>
               </value>
             </param>
             <param index="21">
@@ -147,7 +160,7 @@
             </param>
             <param index="26">
               <value>
-                <![CDATA[Apartment 2 Block B Alto Sillavan Way Salford]]>
+                <![CDATA[Apartment 4 Block B Alto Sillavan Way Salford]]>
               </value>
             </param>
             <param index="27">
@@ -177,166 +190,237 @@
             </param>
             <param index="32">
               <value>
-                <![CDATA[X1 Lettings]]>
+                <![CDATA[L118LZ]]>
               </value>
             </param>
             <param index="33">
               <value>
-                <![CDATA[AB117UE]]>
+                <![CDATA[30 Broad Lane Norris Green Liverpool]]>
               </value>
             </param>
             <param index="34">
               <value>
-                <![CDATA[6 Deemount Gardens Aberdeen]]>
+                <![CDATA[123456890]]>
               </value>
             </param>
             <param index="35">
               <value>
-                <![CDATA[000000000]]>
+                <![CDATA[Miss]]>
               </value>
             </param>
             <param index="36">
               <value>
-                <![CDATA[Miss]]>
+                <![CDATA[James]]>
               </value>
             </param>
             <param index="37">
               <value>
-                <![CDATA[Priyanka]]>
+                <![CDATA[Vilshere]]>
               </value>
             </param>
             <param index="38">
               <value>
-                <![CDATA[Gaikwad]]>
+                <![CDATA[9604328562]]>
               </value>
             </param>
             <param index="39">
               <value>
-                <![CDATA[20555478]]>
+                <![CDATA[7020678830]]>
               </value>
             </param>
             <param index="40">
               <value>
-                <![CDATA[9503999099]]>
+                <![CDATA[amitbaghel@benchmarkitsolutions.com]]>
               </value>
             </param>
             <param index="41">
               <value>
-                <![CDATA[priyankagaikwad@benchmarkitsoluions.com]]>
+                <![CDATA[1400]]>
               </value>
             </param>
             <param index="42">
               <value>
-                <![CDATA[1400]]>
+                <![CDATA[Direct Debit]]>
               </value>
             </param>
             <param index="43">
               <value>
-                <![CDATA[Direct Debit]]>
+                <![CDATA[232323]]>
               </value>
             </param>
             <param index="44">
               <value>
-                <![CDATA[232323]]>
+                <![CDATA[12121121]]>
               </value>
             </param>
             <param index="45">
               <value>
-                <![CDATA[12121121]]>
+                <![CDATA[Dr]]>
               </value>
             </param>
             <param index="46">
               <value>
-                <![CDATA[Dr]]>
+                <![CDATA[Vasim]]>
               </value>
             </param>
             <param index="47">
               <value>
-                <![CDATA[Vasim]]>
+                <![CDATA[Khan]]>
               </value>
             </param>
             <param index="48">
               <value>
-                <![CDATA[Khan]]>
+                <![CDATA[PR56BL]]>
               </value>
             </param>
             <param index="49">
               <value>
-                <![CDATA[PR56BL]]>
+                <![CDATA[UK Tennant Data Unit 9-10 South Preston Office Village Cuerden Way Bamber Bridge Preston]]>
               </value>
             </param>
             <param index="50">
               <value>
-                <![CDATA[UK Tennant Data Unit 9-10 South Preston Office Village Cuerden Way Bamber Bridge Preston]]>
+                <![CDATA[2426261552]]>
               </value>
             </param>
             <param index="51">
               <value>
-                <![CDATA[2426261552]]>
-              </value>
-            </param>
-            <param index="52">
-              <value>
                 <![CDATA[9604328562]]>
               </value>
             </param>
-            <param index="53">
+            <param index="52">
               <value>
                 <![CDATA[vasimkhan@benchmarkitsolutions.com
 ]]>
               </value>
             </param>
-            <param index="54">
+            <param index="53">
               <value>
                 <![CDATA[Friend]]>
               </value>
             </param>
-            <param index="55">
+            <param index="54">
               <value>
                 <![CDATA[5]]>
               </value>
             </param>
-            <param index="56">
-              <value>
-                <![CDATA[Unemployed]]>
-              </value>
-            </param>
-            <param index="57">
+            <param index="55">
               <value>
                 <![CDATA[IND2018]]>
               </value>
             </param>
+            <param index="56">
+              <value>
+                <![CDATA[Employed]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[Bemchmark IT Solutions India Pvt Ltd]]>
+              </value>
+            </param>
             <param index="58">
               <value>
-                <![CDATA[100]]>
+                <![CDATA[QA]]>
               </value>
             </param>
             <param index="59">
               <value>
-                <![CDATA[200]]>
+                <![CDATA[M36GB]]>
               </value>
             </param>
             <param index="60">
               <value>
-                <![CDATA[400]]>
+                <![CDATA[Apartment 3 Block B Alto Sillavan Way Salford]]>
               </value>
             </param>
             <param index="61">
               <value>
-                <![CDATA[500]]>
+                <![CDATA[02022556698]]>
               </value>
             </param>
             <param index="62">
               <value>
-                <![CDATA[600]]>
+                <![CDATA[000000000]]>
               </value>
             </param>
             <param index="63">
+              <value>
+                <![CDATA[Miss]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[Tripti]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Poddar]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[02312545006]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[swapnilbhaskar@benchmarkitsolutions.com]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[QA]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[17/04/2017]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[280000]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[1500]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[400]]>
+              </value>
+            </param>
+            <param index="75">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="76">
+              <value>
+                <![CDATA[600]]>
+              </value>
+            </param>
+            <param index="77">
               <value>
                 <![CDATA[Test]]>
               </value>
             </param>
           </params>
+<<<<<<< HEAD
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Finish')]"}
@@ -426,6 +510,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillTest -->
+=======
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FullReportTenantToPurTenantFill -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.uktd.qa.testcases.TenantToPurTenantFillFR@2b4bac49]" started-at="2019-01-23T20:33:57Z" name="afterMethod" finished-at="2019-01-23T20:33:58Z" duration-ms="596" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.uktd.qa.testcases.TenantToPurTenantFillFR -->
+>>>>>>> 9579946d004d846f853489375312ee9ffbff6336
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

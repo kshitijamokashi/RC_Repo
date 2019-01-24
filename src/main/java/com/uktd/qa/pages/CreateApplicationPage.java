@@ -150,6 +150,56 @@ public class CreateApplicationPage extends TestBase
 		nextbutton.sendKeys(Keys.RETURN);
 		return new QuickStepOnePage();
 		}
+	
+	
+	
+	public ApplicationQuickPage FullReportTenantToPurTenantFill(String f_Report, String p_method, String filledBy, 
+			String p_Code, String a_Address, String d_MoveIn,
+			String t_Period, String m_Rent)
+	{
+		js = (JavascriptExecutor)driver;
+		wait = new WebDriverWait (driver,100); 
+		
+		wait.until(ExpectedConditions.visibilityOf(applicationType));
+		Select AppType = new Select(applicationType);
+		AppType.selectByVisibleText(f_Report);
+
+		wait.until(ExpectedConditions.visibilityOf(purchaseMethod));
+		Select PurType = new Select(purchaseMethod);
+		PurType.selectByVisibleText(p_method);
+		
+		Select Filling = new Select(fillBy);
+		Filling.selectByVisibleText(filledBy);
+		
+		
+		propertyAddress.sendKeys(p_Code);
+		wait.until(ExpectedConditions.elementToBeClickable(find));
+		
+		js.executeScript("arguments[0].click();",find);
+		
+		wait.until(ExpectedConditions.visibilityOf(addList));
+		Select List = new Select(addList);
+		List.selectByVisibleText(a_Address);
+		
+		moveInDate.sendKeys(d_MoveIn);
+		label.click();
+		
+		wait.until(ExpectedConditions.visibilityOf(tenancyPeriod));
+		Select Period = new Select(tenancyPeriod);
+		Period.selectByVisibleText(t_Period);
+		
+		monthlyRent.sendKeys(m_Rent);
+		
+
+		JavascriptExecutor js1 = (JavascriptExecutor)driver;
+		js1.executeScript("arguments[0].click();",lLDashDisable);
+		nextbutton.sendKeys(Keys.RETURN);
+		return new ApplicationQuickPage();
+		
+	}
+	
+	
+	
 	}
 
 
