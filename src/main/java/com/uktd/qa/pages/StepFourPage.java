@@ -329,15 +329,17 @@ public class StepFourPage extends TestBase
 	}
 
 	//UnEmployed
-	public void unemployed(String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc ) 
+	public void unemployed( String insurance_No, String emptype, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc ) 
 	{
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 
+		insuranceNo.sendKeys(insurance_No);
+		
 		select =new Select(empType);
 		select.selectByVisibleText(emptype);
 
-		insuranceNo.sendKeys(insurance_No);
+		
 
 		add_income(f_Tax, h_Benifits, i_Support, d_Allowance,  o_Income, disc);
 

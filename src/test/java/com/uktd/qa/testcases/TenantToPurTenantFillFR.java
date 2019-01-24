@@ -1,5 +1,6 @@
 package com.uktd.qa.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -12,6 +13,7 @@ import com.uktd.qa.pages.CompleteApplication;
 import com.uktd.qa.pages.CreateApplicationPage;
 import com.uktd.qa.pages.LoginPage;
 import com.uktd.qa.pages.OpenApplicationPage;
+import com.uktd.qa.pages.OrderConfirmationPage;
 import com.uktd.qa.pages.PaymentPage;
 import com.uktd.qa.pages.QuickStepOnePage;
 import com.uktd.qa.pages.StepFivePage;
@@ -35,6 +37,8 @@ public class TenantToPurTenantFillFR extends TestBase
 	StepFourPage stepFourPage;
 	StepFivePage stepFivePage;
 	PaymentPage paymentPage;
+	OrderConfirmationPage orderConfirmationPage;
+	
 	
 	public TenantToPurTenantFillFR()
 	{
@@ -111,10 +115,8 @@ public class TenantToPurTenantFillFR extends TestBase
 		stepFivePage = new StepFivePage();
 		stepFivePage.applicantFillStepFive();
 		
-		
-		
-		
-		
+		orderConfirmationPage = new OrderConfirmationPage();
+		Assert.assertEquals(orderConfirmationPage.getPageHeader(), "Order Confirmation");	
 		
 	}
 
@@ -135,7 +137,7 @@ public class TenantToPurTenantFillFR extends TestBase
 	@AfterMethod
 	public void afterMethod() 
 	{
-		driver.close();
+		driver.quit();
 	}
 
 }

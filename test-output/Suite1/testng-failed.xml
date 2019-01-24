@@ -4,15 +4,22 @@
   <listeners>
     <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" name="TestLogin(failed)">
+  <test thread-count="5" name="All Type of Applicant(failed)">
     <classes>
-      <class name="com.uktd.qa.testcases.LoginPageTest">
+      <class name="com.uktd.qa.testcases.AgentToPurAgentFillCRTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="agentLoginPageFunction"/>
-          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="AgentToPurAgentFillCR" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.uktd.qa.testcases.LoginPageTest -->
+      </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillCRTest -->
+      <class name="com.uktd.qa.testcases.TenantToPurTenantFillFR">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="FullReportTenantToPurTenantFill" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.uktd.qa.testcases.TenantToPurTenantFillFR -->
     </classes>
-  </test> <!-- TestLogin(failed) -->
+  </test> <!-- All Type of Applicant(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

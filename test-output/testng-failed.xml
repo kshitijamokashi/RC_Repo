@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite1]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="5" name="All Type of Applicant(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.uktd.qa.testcases.AgentToPurAgentFillTest">
+      <class name="com.uktd.qa.testcases.AgentToPurAgentFillCRTest">
         <methods>
           <include name="afterMethod"/>
+          <include name="AgentToPurAgentFillCR" invocation-numbers="0"/>
           <include name="beforeMethod"/>
-          <include name="FullReportAgentToPurAgentFill" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillTest -->
-=======
+      </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillCRTest -->
       <class name="com.uktd.qa.testcases.TenantToPurTenantFillFR">
         <methods>
           <include name="afterMethod"/>
@@ -19,7 +20,6 @@
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- com.uktd.qa.testcases.TenantToPurTenantFillFR -->
->>>>>>> 9579946d004d846f853489375312ee9ffbff6336
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- All Type of Applicant(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

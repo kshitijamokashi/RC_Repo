@@ -3,23 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.uktd.qa.testcases.AgentToPurAgentFillTest">
+      <class name="com.uktd.qa.testcases.TenantToPurTenantFillCR">
         <methods>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
-          <include name="FullReportAgentToPurAgentFill" invocation-numbers="0"/>
+          <include name="CreditReportTenantToPurTenantFill" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillTest -->
-=======
-      <class name="com.uktd.qa.testcases.TenantToPurTenantFillFR">
-        <methods>
-          <include name="afterMethod"/>
-          <include name="FullReportTenantToPurTenantFill" invocation-numbers="0"/>
-          <include name="beforeMethod"/>
-        </methods>
-      </class> <!-- com.uktd.qa.testcases.TenantToPurTenantFillFR -->
->>>>>>> 9579946d004d846f853489375312ee9ffbff6336
+      </class> <!-- com.uktd.qa.testcases.TenantToPurTenantFillCR -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

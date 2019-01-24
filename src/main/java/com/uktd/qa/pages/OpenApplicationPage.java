@@ -90,6 +90,19 @@ public class OpenApplicationPage extends TestBase
 	@FindBy(xpath = "//*[@id='sendMessageModal']/div[4]/button[1]")
 	WebElement PopUpClose;
 	
+	@FindBy (xpath= "//td[@data-title='Submitted']")
+	WebElement submmitted_Status;
+	
+
+	@FindBy (xpath= "//td[@data-title='Name']")
+	WebElement app_Name;
+	
+	
+	@FindBy (xpath= "//td[@data-title='Recommendation']")
+	WebElement recommendation_Status;
+	
+	
+	
 	
 	
 	public void pageHeaderTest()
@@ -97,11 +110,15 @@ public class OpenApplicationPage extends TestBase
 		Assert.assertTrue(header.isDisplayed());
 	}
 	
+	
+	
 	public String getPageHeader()
 	{
 		String PageHeader = header.getText();
 		return PageHeader;
 	}
+	
+	
 	
 	public String getApplicantID()
 	{
@@ -112,6 +129,8 @@ public class OpenApplicationPage extends TestBase
 		String ApplicantID = appID.getText();
 		return ApplicantID;
 	}
+	
+	
 	
 	
 	public  CreateApplicationPage newApplicationPage()
@@ -158,5 +177,33 @@ public class OpenApplicationPage extends TestBase
 		Logout.sendKeys(Keys.RETURN);
 		return U_R_L;
 		
+	}
+	
+	public void verifyFullReportFilling()
+	{
+		wait = new WebDriverWait(driver,100);
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		
+		expandApplication.click();
+		
+		String submitted_Text = submmitted_Status.getText();
+		String recommandation_Text = recommendation_Status.getText();
+		
+		Assert.assertEquals(submitted_Text, "Awaiting Processor Assignment");
+		Assert.assertEquals(recommandation_Text, "Pending Decision");
+	}
+	
+	public void verifyCreditReportFilling()
+	{
+		wait = new WebDriverWait(driver,100);
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		
+		expandApplication.click();
+		
+		String submitted_Text = submmitted_Status.getText();
+		String recommandation_Text = recommendation_Status.getText();
+		
+		Assert.assertEquals(submitted_Text, "Credit Report Only ");
+	//	Assert.assertEquals(recommandation_Text, "Pending Decision");
 	}
 }

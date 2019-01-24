@@ -145,8 +145,8 @@ public class CreateApplicationPage extends TestBase
 		monthlyRent.sendKeys(m_Rent);
 		
 
-		JavascriptExecutor js1 = (JavascriptExecutor)driver;
-		js1.executeScript("arguments[0].click();",lLDashDisable);
+		js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();",lLDashDisable);
 		nextbutton.sendKeys(Keys.RETURN);
 		return new QuickStepOnePage();
 		}

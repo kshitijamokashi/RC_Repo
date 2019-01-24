@@ -19,7 +19,7 @@ import com.uktd.qa.pages.StepThreePage;
 import com.uktd.qa.pages.StepTwoPage;
 import com.uktd.qa.util.TestUtil;
 
-public class AgentToPurAgentFillTest extends TestBase 
+public class AgentToPurAgentFillFRTest extends TestBase 
 {
 	LoginPage loginpage;
 	OpenApplicationPage openApplication;
@@ -32,7 +32,7 @@ public class AgentToPurAgentFillTest extends TestBase
 	AgentTransactionPage agentTransactionPage;
 	StepFivePage stepFivePage;
 
-	public AgentToPurAgentFillTest()
+	public AgentToPurAgentFillFRTest()
 	{
 		super();
 	}
@@ -93,19 +93,10 @@ public class AgentToPurAgentFillTest extends TestBase
 		completeApplication = new CompleteApplication();
 		completeApplication.finishApplication();
 
-	/*	openApplication = new OpenApplicationPage();
-		String ApplicantId =  openApplication.getApplicantID();
-		openApplication.agentTransaction();
-
-		agentTransactionPage = new AgentTransactionPage();
-		String [] transValue = agentTransactionPage.getAgentToPurchaseTransation(ApplicantId);
-
-		Assert.assertEquals(transValue[0],"Agent Purchase -Full Report-"+a_Name+" "+ a_MiddleName+" "+ a_SurName+"("+ApplicantId+")");
-		Assert.assertEquals(transValue[1], "1");
-		Assert.assertEquals(transValue[2], "10.00");
-		Assert.assertEquals(transValue[3], "2.00");
-		Assert.assertEquals(transValue[4], "12.00");
-	*/
+		
+		openApplication.verifyFullReportFilling();	
+		
+	
 		}
 
 
