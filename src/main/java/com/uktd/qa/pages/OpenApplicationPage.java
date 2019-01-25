@@ -203,7 +203,7 @@ public class OpenApplicationPage extends TestBase
 		String submitted_Text = submmitted_Status.getText();
 		String recommandation_Text = recommendation_Status.getText();
 		
-		Assert.assertEquals(submitted_Text, "Credit Report Only ");
+		Assert.assertEquals(submitted_Text, "Credit Report Only  ");
 	//	Assert.assertEquals(recommandation_Text, "Pending Decision");
 	}
 }
