@@ -215,8 +215,8 @@ public class StepTwoPage extends TestBase
 	WebElement labelPrevMoveOutDate;
 
 	public void landlord_section(String ll_PCode, String ll_Address, String ll_Fax, 
-								 String ll_Title, String ll_Name, String ll_Surname,
-								 String ll_PhoneNo, String ll_MobileNo, String ll_EmailAdd) 
+			String ll_Title, String ll_Name, String ll_Surname,
+			String ll_PhoneNo, String ll_MobileNo, String ll_EmailAdd) 
 	{
 		wait = new WebDriverWait(driver, 100);
 		lLpostcode.sendKeys(ll_PCode);
@@ -381,49 +381,122 @@ public class StepTwoPage extends TestBase
 
 		return new StepThreePage();
 	}
-	
-	
+
+
 	//Friends And Family Yes LL		
-		public StepThreePage FriendsAndFamilyYesLL(String c_LivivngWith, String c_PostCode, String c_Address, 
-				String c_MoveIn, String p_MoveIn, String p_MoveOut, String p_Postcode,
-				String p_Address, String ll_PCode, String ll_Address, String ll_Fax, 
-				 String ll_Title, String ll_Name, String ll_Surname,
-				 String ll_PhoneNo, String ll_MobileNo, String ll_EmailAdd, String mo_Rent, String p_Type, String s_Code, String a_No )
-		{
-			wait = new WebDriverWait(driver,100);
+	public StepThreePage FriendsAndFamilyYesLL(String c_LivivngWith, String c_PostCode, String c_Address, 
+			String c_MoveIn, String p_MoveIn, String p_MoveOut, String p_Postcode,
+			String p_Address, String ll_PCode, String ll_Address, String ll_Fax, 
+			String ll_Title, String ll_Name, String ll_Surname,
+			String ll_PhoneNo, String ll_MobileNo, String ll_EmailAdd, String mo_Rent, String p_Type, String s_Code, String a_No )
+	{
+		wait = new WebDriverWait(driver,100);
 
-			wait.until(ExpectedConditions.invisibilityOf(loader));
-			wait.until(ExpectedConditions.visibilityOf(accStatus));
-			Select statusdrp =new Select(accStatus);
-			statusdrp.selectByVisibleText(c_LivivngWith);
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		wait.until(ExpectedConditions.visibilityOf(accStatus));
+		Select statusdrp =new Select(accStatus);
+		statusdrp.selectByVisibleText(c_LivivngWith);
 
-			wait.until(ExpectedConditions.visibilityOf(rentedLast6MonthYes));
+		wait.until(ExpectedConditions.visibilityOf(rentedLast6MonthYes));
 
-			js = (JavascriptExecutor)driver;
-			js.executeScript("arguments[0].click();",rentedLast6MonthYes);
+		js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();",rentedLast6MonthYes);
 
-			wait.until(ExpectedConditions.visibilityOf(landlord));
-			js.executeScript("arguments[0].click();",landlord);
-
-
-			enter_current_address_info(c_PostCode, c_Address, c_MoveIn);
+		wait.until(ExpectedConditions.visibilityOf(landlord));
+		js.executeScript("arguments[0].click();",landlord);
 
 
-			address_you_were_renting(p_MoveIn, p_MoveOut, p_Postcode, p_Address);
-
-			
-			landlord_section(ll_PCode, ll_Address,  ll_Fax, ll_Title,  ll_Name, ll_Surname, ll_PhoneNo,  ll_MobileNo,  ll_EmailAdd); 
+		enter_current_address_info(c_PostCode, c_Address, c_MoveIn);
 
 
-			enter_accommodation_details(mo_Rent, p_Type);
+		address_you_were_renting(p_MoveIn, p_MoveOut, p_Postcode, p_Address);
 
 
-			enter_bank_info(s_Code, a_No);
+		landlord_section(ll_PCode, ll_Address,  ll_Fax, ll_Title,  ll_Name, ll_Surname, ll_PhoneNo,  ll_MobileNo,  ll_EmailAdd); 
 
 
-			updateButton.sendKeys(Keys.RETURN);
+		enter_accommodation_details(mo_Rent, p_Type);
 
-			return new StepThreePage();
-		}
 
+		enter_bank_info(s_Code, a_No);
+
+
+		updateButton.sendKeys(Keys.RETURN);
+
+		return new StepThreePage();
+	}
+
+	public StepThreePage CurrentlyRentingLettingAgent(String c_LivivngWith, String c_PostCode, String c_Address, 
+			String c_MoveIn, String la_Name, String la_Postcode, String la_Address, 
+			String la_Fax, String la_Titile, String la_FName, 
+			String la_lName, String la_Phone, String la_Mobile, 
+			String la_Email, String m_Rent, String p_Type, String s_Code, String a_No)
+	{
+		wait = new WebDriverWait(driver,100);
+		js = (JavascriptExecutor)driver;
+		
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		wait.until(ExpectedConditions.visibilityOf(accStatus));
+		select  = new Select(accStatus);
+		select.selectByVisibleText(c_LivivngWith);
+
+		wait.until(ExpectedConditions.visibilityOf(lettingAgent));
+		js.executeScript("arguments[0].click();",lettingAgent);
+		
+		enter_current_address_info(c_PostCode, c_Address, c_MoveIn);
+
+
+		letting_agent_section(la_Name, la_Postcode, la_Address, la_Fax,  la_Titile,  la_FName, 
+				la_lName,  la_Phone,  la_Mobile, la_Email);
+
+
+		enter_accommodation_details(m_Rent, p_Type);
+
+
+		enter_bank_info(s_Code, a_No);
+
+
+		updateButton.sendKeys(Keys.RETURN);
+
+
+		return new StepThreePage();
+	}
+	
+	
+	
+
+	public StepThreePage CurrentlyRentingLandlord(String c_LivivngWith, String c_PostCode, String c_Address, 
+			String c_MoveIn, String ll_PCode, String ll_Address, String ll_Fax, 
+			String ll_Title, String ll_Name, String ll_Surname,
+			String ll_PhoneNo, String ll_MobileNo, String ll_EmailAdd, String mo_Rent, String p_Type, String s_Code, String a_No )
+	{
+		wait = new WebDriverWait(driver,100);
+
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		wait.until(ExpectedConditions.visibilityOf(accStatus));
+		select  = new Select(accStatus);
+		select.selectByVisibleText(c_LivivngWith);
+
+		wait.until(ExpectedConditions.visibilityOf(landlord));
+		js.executeScript("arguments[0].click();",landlord);
+
+		enter_current_address_info(c_PostCode, c_Address, c_MoveIn);
+		
+
+		landlord_section(ll_PCode, ll_Address,  ll_Fax, ll_Title,  ll_Name, ll_Surname, ll_PhoneNo,  ll_MobileNo,  ll_EmailAdd); 
+
+
+		enter_accommodation_details(mo_Rent, p_Type);
+
+
+		enter_bank_info(s_Code, a_No);
+
+
+		updateButton.sendKeys(Keys.RETURN);
+
+		return new StepThreePage();
+
+	}
+	
+	
 }

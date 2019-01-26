@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.uktd.qa.testcases.TenantToPurTenantFillCR">
+      <class name="com.uktd.qa.testcases.Step2andSte4RefrenceCheck">
         <methods>
+          <include name="RefChekofLettingAgentAndLettingAgent" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
-          <include name="CreditReportTenantToPurTenantFill" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.uktd.qa.testcases.TenantToPurTenantFillCR -->
+      </class> <!-- com.uktd.qa.testcases.Step2andSte4RefrenceCheck -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

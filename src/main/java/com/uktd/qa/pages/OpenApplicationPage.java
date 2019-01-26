@@ -102,6 +102,12 @@ public class OpenApplicationPage extends TestBase
 	WebElement recommendation_Status;
 	
 	
+	@FindBy (xpath = "//*[@id=\"modal-body\"]/div[2]/div[1]/ul/li[5]")
+	WebElement EmployerEmail;
+	
+	
+	@FindBy (xpath = "//*[@id=\"modal-body\"]/div[2]/div[2]/ul/li[5]/span[2]")
+	WebElement AccRefEmail;
 	
 	
 	
@@ -178,6 +184,52 @@ public class OpenApplicationPage extends TestBase
 		return U_R_L;
 		
 	}
+	
+	
+	public String getEmploymentRefURL()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 400);	
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		ExpandApplication.click();
+		OpenMessagePopUp.click();
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		EmployerEmail.click();
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		
+		select =new Select(MessageTypeDrp);
+		select.selectByVisibleText("Resend Employment Check Link");
+		
+		String U_R_L = URL.getText();
+		PopUpClose.click();
+		wait.until(ExpectedConditions.invisibilityOf(Logout));
+		Logout.sendKeys(Keys.RETURN);
+		return U_R_L;
+		
+	}
+	
+	
+	public String getAccomodationRefURL()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 400);	
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		ExpandApplication.click();
+		OpenMessagePopUp.click();
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		AccRefEmail.click();
+		wait.until(ExpectedConditions.invisibilityOf(loader));
+		
+		select =new Select(MessageTypeDrp);
+		select.selectByVisibleText("Resend Accommodation Check Link");
+		
+		String U_R_L = URL.getText();
+		PopUpClose.click();
+		wait.until(ExpectedConditions.invisibilityOf(Logout));
+		Logout.sendKeys(Keys.RETURN);
+		return U_R_L;
+		
+	}
+	
+	
 	
 	public void verifyFullReportFilling()
 	{

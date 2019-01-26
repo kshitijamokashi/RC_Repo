@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
-  <listeners>
-    <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
-  </listeners>
-  <test thread-count="5" name="All Type of Applicant(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.uktd.qa.testcases.AgentToPurAgentFillFRTest">
+      <class name="com.uktd.qa.testcases.Step2andSte4RefrenceCheck">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="FullReportAgentToPurAgentFill" invocation-numbers="0"/>
+          <include name="RefChekofLettingAgentAndLettingAgent" invocation-numbers="0"/>
           <include name="afterMethod"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillFRTest -->
+      </class> <!-- com.uktd.qa.testcases.Step2andSte4RefrenceCheck -->
     </classes>
-  </test> <!-- All Type of Applicant(failed) -->
-</suite> <!-- Failed suite [Suite1] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
