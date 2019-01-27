@@ -5,7 +5,7 @@
     <classes>
       <class name="com.uktd.qa.testcases.Step2andSte4RefrenceCheck">
         <methods>
-          <include name="RefChekofLettingAgentAndLettingAgent" invocation-numbers="0"/>
+          <include name="RefChekofLettingAgentAndLettingAgent"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
         </methods>

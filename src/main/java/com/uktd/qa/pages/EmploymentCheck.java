@@ -61,7 +61,91 @@ public class EmploymentCheck extends TestBase
 	@FindBy(xpath = "//button[contains(text(),'Submit Reference')]")
 	WebElement submitBtn;
 
+	
+	@FindBy(xpath="//h2[contains(text(),'Company Details')]")
+	WebElement companyName;
+	
+	@FindBy(xpath="//select[@class='form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required']")
+	WebElement businessName;
+	
+	@FindBy(xpath = "//input[@ng-model='model.applicantNumberofYearsTrading']")
+	WebElement yearsOfTrading;
+	
+	@FindBy(xpath = "//input[@name='applicantBusinessType']")
+	WebElement businessType;
+	
+	@FindBy(xpath = "//input[@ng-model='model.accountantCredentials']")
+	WebElement accCredentials;
+	
+	@FindBy(xpath = "//input[@ng-model='model.accountantYearsKnown']")
+	WebElement yearsOfknown;
+	
+	@FindBy(xpath = "//input[@value='true'][@ng-model='model.istheApplicantReliable']//ancestor::label[@class='btn btn-primary']")
+	WebElement applicantreliableYes;
+	
+	@FindBy(xpath = "//input[@value='false'][@ng-model='model.istheApplicantReliable']//ancestor::label[@class='btn btn-primary']")
+	WebElement applicantreliableNo;
+	
+	
+	@FindBy(xpath = "//button[contains(text(),'Submit Reference')]")
+	WebElement submitButton;
+	
+	
+	
+	
+	public void verifySelfEmployerData( String a_Name, String a_SurName, String c_Address, 
+										String companyBusiness_Name, String YearsOfTrade, String busi_Type,
+										String anuIncome, String foreName, String surName)
+	{
+		js = (JavascriptExecutor)driver;
+		
+		SoftAssert  SA = new SoftAssert();
+		
+		String applicantName = appName.getText();
+		
+		String address = currentAddress.getText();
+		
+		String company_Name = companyName.getText();
+		
+		
+		select = new Select(businessName);
+		WebElement option = select.getFirstSelectedOption();
+		String business_Name = option.getText();
+		
+		
+		String yearsOfTrade = yearsOfTrading.getAttribute("value");
+		
+		String business_Type = businessType.getAttribute("value");
+		
+		String annual_Salary = annualSalary.getAttribute("value");
+		
+		String accName = RefName.getAttribute("value");
 
+		
+		SA.assertEquals(applicantName, a_Name+" "+a_SurName);
+		
+		SA.assertTrue(address.contains(c_Address));
+		
+		SA.assertTrue(company_Name.contains(companyBusiness_Name));
+		
+		SA.assertEquals(business_Name, "Known");
+		
+		SA.assertEquals(yearsOfTrade, YearsOfTrade);
+		
+		SA.assertEquals(business_Type, busi_Type);
+		
+		SA.assertEquals(annual_Salary, anuIncome);
+		
+		SA.assertEquals(accName, foreName+" "+surName);
+	
+		SA.assertAll();
+	
+	}
+	
+	
+	
+	
+	
 	public void verifyEmployerData(String a_Name, String a_SurName, String c_Address, String insurance_No, String s_Date, String position, String  a_Salary, String a_Bonus, String c_Fname, String c_Lname )
 	{
 		js = (JavascriptExecutor)driver;
@@ -94,23 +178,12 @@ public class EmploymentCheck extends TestBase
 
 		String RefreeName = RefName.getAttribute("value");
 
-		//System.out.println(applicantName+" "+address+" "+insuranceNumber+" "+workingHrs+" "+working_Contract+" "+status+" "+jobStartDate+" "+job_Title+" "+Salary+" "+Bonus+RefreeName);
-
 		SA.assertEquals(applicantName, a_Name+" "+a_SurName);
-		
-		//SA.assertEquals(address, c_Address);
 		
 		SA.assertTrue(address.contains(c_Address));
 		
 		SA.assertEquals(insuranceNumber, insurance_No);
-		
-	
-		/*	SA.assertEquals(workingHrs, expected);
-		
-		SA.assertEquals(working_Contract, expected);
-		
-	*/
-		
+				
 		SA.assertEquals(status, "Employed with no future changes");
 		
 		SA.assertEquals(jobStartDate, s_Date);
@@ -126,6 +199,7 @@ public class EmploymentCheck extends TestBase
 	SA.assertAll();	
 	}
 
-
+	
+	
 }
 

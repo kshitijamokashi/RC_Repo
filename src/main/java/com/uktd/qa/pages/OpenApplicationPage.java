@@ -201,8 +201,8 @@ public class OpenApplicationPage extends TestBase
 		
 		String U_R_L = URL.getText();
 		PopUpClose.click();
-		wait.until(ExpectedConditions.invisibilityOf(Logout));
-		Logout.sendKeys(Keys.RETURN);
+		//wait.until(ExpectedConditions.invisibilityOf(Logout));
+		//Logout.sendKeys(Keys.RETURN);
 		return U_R_L;
 		
 	}
@@ -212,7 +212,7 @@ public class OpenApplicationPage extends TestBase
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 400);	
 		wait.until(ExpectedConditions.invisibilityOf(loader));
-		ExpandApplication.click();
+		//ExpandApplication.click();
 		OpenMessagePopUp.click();
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 		AccRefEmail.click();
@@ -223,7 +223,7 @@ public class OpenApplicationPage extends TestBase
 		
 		String U_R_L = URL.getText();
 		PopUpClose.click();
-		wait.until(ExpectedConditions.invisibilityOf(Logout));
+		wait.until(ExpectedConditions.visibilityOf(Logout));
 		Logout.sendKeys(Keys.RETURN);
 		return U_R_L;
 		

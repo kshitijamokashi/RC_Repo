@@ -471,7 +471,8 @@ public class StepTwoPage extends TestBase
 			String ll_PhoneNo, String ll_MobileNo, String ll_EmailAdd, String mo_Rent, String p_Type, String s_Code, String a_No )
 	{
 		wait = new WebDriverWait(driver,100);
-
+		js = (JavascriptExecutor)driver;
+		
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 		wait.until(ExpectedConditions.visibilityOf(accStatus));
 		select  = new Select(accStatus);

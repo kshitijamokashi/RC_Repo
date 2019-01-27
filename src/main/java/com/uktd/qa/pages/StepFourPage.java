@@ -177,7 +177,7 @@ public class StepFourPage extends TestBase
 	@FindBy (xpath= "//*[@name='otherIncomeDescription']")
 	WebElement description;
 
-	@FindBy(xpath = "html/body/section/section/div/div/ng-view/div/div/div/form/div[1]")
+	@FindBy(xpath = "//label[contains(text(),'Start Date')]")
 	WebElement date;
 	
 	
@@ -272,55 +272,63 @@ public class StepFourPage extends TestBase
 		wait.until(ExpectedConditions.invisibilityOf(loader));
 	}
 
-	public void Self_Emp(String emptype, String insurance_No, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc)
+	public void Self_Emp(String insurance_No, String emptype, String business_Name, String YearsOfTrade,
+						String business_Type, String jobTitle, String startDate, String anuIncome, String anuBonus,
+					String title, String foreName, String surName, String accPractName, String pCode, String address,	
+					String accPractEmail, String accPractPhone, String accPractMobile, String accPractfax, String f_Tax, String h_Benifits, String i_Support, String d_Allowance, String o_Income, String disc)
+	
+	
 	{
 		wait = new WebDriverWait(driver,100);
 		wait.until(ExpectedConditions.invisibilityOf(loader));
+
+		insuranceNo.sendKeys(insurance_No);
+		
 		
 		select =new Select(empType);
-		select.selectByVisibleText("Self-Employed / Director of own company");
+		select.selectByVisibleText(emptype);
 
-		insuranceNo.sendKeys("IND2018");
 		
-		businessName.sendKeys("WallMart");
+		businessName.sendKeys(business_Name);
 
-		nOYTrading.sendKeys("120");
+		nOYTrading.sendKeys(YearsOfTrade);
 		
-		businessType.sendKeys("Shopping Center");
+		businessType.sendKeys(business_Type);
 		
-		job_Title.sendKeys("Owner");
+		job_Title.sendKeys(jobTitle);
 		
-		job_Start_Date.sendKeys("17/04/2017");
+		job_Start_Date.sendKeys(startDate);
 		date.click();
 		
-		annualIncome.sendKeys("280000");
+		annualIncome.clear();
+		annualIncome.sendKeys(anuIncome);
 		
-		annual_Bonus.sendKeys("1200");
+		annual_Bonus.sendKeys(anuBonus);
 		
 		select = new Select(accTitle);
-		select.selectByVisibleText("Mr");
+		select.selectByVisibleText(title);
 		
-		accForeName.sendKeys("Aniket");
+		accForeName.sendKeys(foreName);
 		
-		accSurname.sendKeys("Kulkarni");
+		accSurname.sendKeys(surName);
 		
-		accPracticeName.sendKeys("AniKet Sir");
+		accPracticeName.sendKeys(accPractName);
 		
-		accpostCode.sendKeys("l118lz");
+		accpostCode.sendKeys(pCode);
 		wait.until(ExpectedConditions.elementToBeClickable(postFindButton));
 		js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",postFindButton);
 		wait.until(ExpectedConditions.visibilityOf(accAddress));
 		select =new Select(accAddress);
-		select.selectByVisibleText("28 Broad Lane Norris Green Liverpool");
+		select.selectByVisibleText(address);
 		
-		accEmail.sendKeys("ak@bits.com");
+		accEmail.sendKeys(accPractEmail);
 		
-		accPhone.sendKeys("123456878");
+		accPhone.sendKeys(accPractPhone);
 		
-		accMobile.sendKeys("789548798978");
+		accMobile.sendKeys(accPractMobile);
 		
-		fax.sendKeys("887787788787");
+		fax.sendKeys(accPractfax);
 
 		add_income(f_Tax, h_Benifits, i_Support, d_Allowance,  o_Income, disc);
 		
