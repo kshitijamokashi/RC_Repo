@@ -26,7 +26,7 @@ public class ManageServicesPage extends TestBase
 	@FindBy(xpath = "//*[@class='sub-nav']//*[text()='Dashboard']")
 	WebElement dashboardSubnavigation;
 
-	@FindBy(xpath = "//div[@class='top-nav']//child::ul//child::li//child::a[@href='https://www.resortcleaning.com/demo/user/user_cl_properties.php']//child::span[contains(text(),'Properties')]")
+	@FindBy(xpath = "//div[@class='top-nav']//child::ul//child::li//child::span[contains(text(),'Properties')]")
 	WebElement propertyNavigator;
 
 	@FindBy(xpath = "//button[contains(text(), 'Add Services')]")
@@ -73,7 +73,7 @@ public class ManageServicesPage extends TestBase
 
 		// Navigation to add service page
 		clickOnElement(propertyNavigator);
-		clickOnNavigatorBar(ManageServiceNavigator);
+		clickOnNavigatorBarLinks(ManageServiceNavigator);
 
 		// Add service
 		clickOnElement(button_addServices);
@@ -106,7 +106,7 @@ public class ManageServicesPage extends TestBase
 
 	public void deactivateService(String updateName) {
 
-		clickOnTableActionButton(updateName, "Deactivated");
+		clickOnTableActionButton(updateName, "Deactivate");
 		clickOnElement(button_showInactive);
 		assertTrue(verifyTableData(updateName));
 

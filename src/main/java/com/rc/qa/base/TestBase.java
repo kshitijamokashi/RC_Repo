@@ -9,6 +9,8 @@ package com.rc.qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -168,8 +170,7 @@ public class TestBase
 
 			waitTillElemenyVisibility(elementToClick);
 			elementToClick.click();
-
-		} catch (Exception e) {
+			} catch (Exception e) {
 			System.out.println("Exception Occurred: " + e.getMessage());
 		}
 	}
@@ -234,12 +235,28 @@ public class TestBase
 	}
 
 	/***
+	 * This function is for selection value from drop down
+	 * @param WebElement, optionToSelect
+	 */
+	public static void selectFromDropDown(WebElement dropdownElement, String optionToSelect) {
+
+		try {
+
+			waitTillElemenyVisibility(dropdownElement);
+			Select drp = new Select(dropdownElement);
+			drp.selectByVisibleText(optionToSelect);
+			
+			} catch (Exception e) {
+			System.out.println("Exception Occurred: " + e.getMessage());
+		}
+	}
+	/***
 	 * This function will find text given on the navigation bar abd click on it
 	 * 
 	 * @param navigation
 	 *            bar text
 	 */
-	public static void clickOnNavigatorBar(String inputToEnter) {
+	public static void clickOnNavigatorBarLinks(String inputToEnter) {
 
 		try {
 			String xpath = "//a[contains(text(), '" + inputToEnter + "')]";
@@ -253,6 +270,7 @@ public class TestBase
 		}
 	}
 
+	
 	/***
 	 * This function verify given string in the table rows and return true of
 	 * false
@@ -348,6 +366,53 @@ public class TestBase
 
 		catch (Exception e) {
 			System.out.println("Exception Found..." + e.getMessage());
+		}
+	}
+	
+	/***
+	 * This function is for click on the element
+	 * 
+	 * @param WebElement
+	 */
+	public static boolean verifyNavigationToURL(String URLToVerify ) {
+
+		try {
+				String url = driver.getCurrentUrl();
+				System.out.println(url);
+				if(prop.getProperty("Environment").equalsIgnoreCase("live")){
+					String liveurl = url.replaceAll("demo", "dahshboard");
+					if(liveurl.equals(URLToVerify)){
+						return true;
+					}
+						else return false;
+					
+				
+				}else if(url.equals(URLToVerify)){
+					return true;
+				}
+				else
+					return false;
+			
+			} catch (Exception e) {
+			System.out.println("Exception Occurred: " + e.getMessage());
+		}
+		return false;
+	}
+
+	public static String getTodayesDateFormatted(){
+		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		Date date = new Date();
+
+		
+		return formatter.format(date);
+		
+	}
+	
+	
+	public static void dismissAlertify() {
+		if (verifyElementIsDisplayed(driver.findElement(By.xpath("//div[@class='ajs-message ajs-visible']")))) {
+			clickOnElement(driver.findElement(By.xpath("//div[@id='dismiss_maint_alert']")));
+			clickOnElement(driver.findElement(By.xpath("//button[contains(text(),'OK')][@class='ajs-button ajs-ok']")));
 		}
 	}
 

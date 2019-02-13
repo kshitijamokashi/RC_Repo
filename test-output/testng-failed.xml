@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="TestLogin(failed)">
     <classes>
-      <class name="com.rc.qa.testcases.ManageServices">
+      <class name="com.rc.qa.testcases.ScheduleAppointment">
         <methods>
-          <include name="cleanerLogin" invocation-numbers="0"/>
-          <include name="setUp"/>
+          <include name="schduleAppointment"/>
           <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.rc.qa.testcases.ManageServices -->
+      </class> <!-- com.rc.qa.testcases.ScheduleAppointment -->
     </classes>
   </test> <!-- TestLogin(failed) -->
 </suite> <!-- Failed suite [Suite1] -->
