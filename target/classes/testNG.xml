@@ -8,8 +8,7 @@
 
  <test name="TestLogin">
     <classes>
-      <class name="com.uktd.qa.testcases.LoginPageTest"/>
-       <class name="com.uktd.qa.testcases.AddAgentTest"/>  
+      <class name="com.rc.qa.testcases.ManageServices"/>
     </classes>
   </test> 
 </suite> 

@@ -4,15 +4,15 @@
   <listeners>
     <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" name="All Type of Applicant(failed)">
+  <test thread-count="5" name="TestLogin(failed)">
     <classes>
-      <class name="com.uktd.qa.testcases.AgentToPurAgentFillFRTest">
+      <class name="com.rc.qa.testcases.ManageServices">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="FullReportAgentToPurAgentFill" invocation-numbers="0"/>
-          <include name="afterMethod"/>
+          <include name="cleanerLogin" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.uktd.qa.testcases.AgentToPurAgentFillFRTest -->
+      </class> <!-- com.rc.qa.testcases.ManageServices -->
     </classes>
-  </test> <!-- All Type of Applicant(failed) -->
+  </test> <!-- TestLogin(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

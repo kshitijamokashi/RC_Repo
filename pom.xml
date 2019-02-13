@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>UKTD_Maven</groupId>
-  <artifactId>UKTD_Maven</artifactId>
+  <groupId>RC-MAVEN</groupId>
+  <artifactId>RC-MAVEN</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>UKTD_Maven</name>
+  <name>RC-MAVEN</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -35,11 +35,6 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.9</version>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
