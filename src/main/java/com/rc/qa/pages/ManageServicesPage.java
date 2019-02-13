@@ -106,7 +106,7 @@ public class ManageServicesPage extends TestBase
 
 	public void deactivateService(String updateName) {
 
-		clickOnTableActionButton(updateName, "Deactivatedd");
+		clickOnTableActionButton(updateName, "Deactivated");
 		clickOnElement(button_showInactive);
 		assertTrue(verifyTableData(updateName));
 
