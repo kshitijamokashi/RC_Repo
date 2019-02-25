@@ -68,7 +68,7 @@ public class ManageServicesPage extends TestBase
 	WebElement button_showInactive;
 
 	// String on navigators
-	public String ManageServiceNavigator = "Manage Services";
+//	public String ManageServiceNavigator = "Manage Services";
 
 	public void addService(String serviceName, String calculateDate) throws InterruptedException {
 		// Wait for page load

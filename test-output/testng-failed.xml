@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rc.qa.testcases.ManageServices">
+      <class name="com.rc.qa.testcases.ManageRegionAreas">
         <methods>
           <include name="setUp"/>
+          <include name="manageRegionArea" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="manageServices" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.rc.qa.testcases.ManageServices -->
+      </class> <!-- com.rc.qa.testcases.ManageRegionAreas -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
