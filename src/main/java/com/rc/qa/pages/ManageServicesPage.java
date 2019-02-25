@@ -23,11 +23,14 @@ public class ManageServicesPage extends TestBase
 	}
 
 	// Add service pop up
-	@FindBy(xpath = "//*[@class='sub-nav']//*[text()='Dashboard']")
-	WebElement dashboardSubnavigation;
+	@FindBy(xpath = "//*[@id='sidebar']")
+	WebElement sidebar;
 
-	@FindBy(xpath = "//div[@class='top-nav']//child::ul//child::li//child::span[contains(text(),'Properties')]")
-	WebElement propertyNavigator;
+	@FindBy(xpath = "//span[contains(text(),'Setup')]")
+	WebElement tab_setUp;
+	
+	@FindBy(xpath = "//span[@class='nav-txt'][contains(text(), 'Services')]")
+	WebElement link_services;
 
 	@FindBy(xpath = "//button[contains(text(), 'Add Services')]")
 	WebElement button_addServices;
@@ -69,12 +72,12 @@ public class ManageServicesPage extends TestBase
 
 	public void addService(String serviceName, String calculateDate) throws InterruptedException {
 		// Wait for page load
-		waitTillElemenyVisibility(dashboardSubnavigation);
+		waitTillElemenyVisibility(sidebar);
 
 		// Navigation to add service page
-		clickOnElement(propertyNavigator);
-		clickOnNavigatorBarLinks(ManageServiceNavigator);
-
+		clickOnElement(tab_setUp);
+		clickOnElement(link_services);
+		
 		// Add service
 		clickOnElement(button_addServices);
 		verifyElementIsDisplayed(form_addServices);
@@ -85,10 +88,10 @@ public class ManageServicesPage extends TestBase
 			clickOnElement(check_dateCalculation);
 
 		// add service button
-		if (verifyElementIsDisplayed(alertify_popup)) {
-			clickOnElement(button_dismiss);
-			clickOnElement(button_dismissConfirmationOK);
-		}
+//		if (verifyElementIsDisplayed(alertify_popup)) {
+//			clickOnElement(button_dismiss);
+//			clickOnElement(button_dismissConfirmationOK);
+//		}
 		Thread.sleep(4000);
 		clickOnElement(button_Add);
 		assertTrue(verifyTableData(serviceName));

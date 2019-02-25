@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rc.qa.testcases.CleanerLogin">
+      <class name="com.rc.qa.testcases.ManageServices">
         <methods>
-          <include name="cleanerLogin" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="manageServices" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.rc.qa.testcases.CleanerLogin -->
+      </class> <!-- com.rc.qa.testcases.ManageServices -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

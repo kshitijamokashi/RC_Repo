@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]">
-  <listeners>
-    <listener class-name="com.qa.ExtentReportListener.ExtentReporterNG"/>
-  </listeners>
-  <test thread-count="5" name="TestLogin(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rc.qa.testcases.ScheduleAppointment">
+      <class name="com.rc.qa.testcases.ManageServices">
         <methods>
-          <include name="schduleAppointment"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="manageServices" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.rc.qa.testcases.ScheduleAppointment -->
+      </class> <!-- com.rc.qa.testcases.ManageServices -->
     </classes>
-  </test> <!-- TestLogin(failed) -->
-</suite> <!-- Failed suite [Suite1] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
