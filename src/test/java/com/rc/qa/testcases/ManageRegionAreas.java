@@ -31,12 +31,12 @@ public class ManageRegionAreas  extends TestBase
 	}
 
 	@Test(dataProvider = "getRegionAreaData")
-	public void manageRegionArea(String regionName) throws InterruptedException 
+	public void manageRegionArea(String regionName,String updatedRegionName) throws InterruptedException 
 	{
 		
 		ManageRegionsAreasPage regionAreasPage = new ManageRegionsAreasPage();
 		regionAreasPage.addRgion(regionName);
-//		regionAreasPage.editService(serviceName, updateServiceName);
+		regionAreasPage.editRegion(regionName, updatedRegionName);
 //		regionAreasPage.deactivateService(updateServiceName);
 //		regionAreasPage.activateService(updateServiceName);
 //		regionAreasPage.deleteService(updateServiceName);

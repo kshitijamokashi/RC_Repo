@@ -2,20 +2,25 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22639" started-at="2019-02-25T13:12:58Z" finished-at="2019-02-25T13:13:21Z">
+  <suite name="Default suite" duration-ms="51350" started-at="2019-02-27T13:51:26Z" finished-at="2019-02-27T13:52:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22639" started-at="2019-02-25T13:12:58Z" finished-at="2019-02-25T13:13:21Z">
+    <test name="Default test" duration-ms="51350" started-at="2019-02-27T13:51:26Z" finished-at="2019-02-27T13:52:17Z">
       <class name="com.rc.qa.testcases.ManageRegionAreas">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.rc.qa.testcases.ManageRegionAreas@589838eb]" name="setUp" is-config="true" duration-ms="16890" started-at="2019-02-25T13:12:59Z" finished-at="2019-02-25T13:13:16Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.rc.qa.testcases.ManageRegionAreas@589838eb]" name="setUp" is-config="true" duration-ms="17104" started-at="2019-02-27T13:51:27Z" finished-at="2019-02-27T13:51:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="manageRegionArea(java.lang.String)[pri:0, instance:com.rc.qa.testcases.ManageRegionAreas@589838eb]" name="manageRegionArea" duration-ms="5002" started-at="2019-02-25T13:13:16Z" data-provider="getRegionAreaData" finished-at="2019-02-25T13:13:21Z">
+        <test-method status="FAIL" signature="manageRegionArea(java.lang.String, java.lang.String)[pri:0, instance:com.rc.qa.testcases.ManageRegionAreas@589838eb]" name="manageRegionArea" duration-ms="33515" started-at="2019-02-27T13:51:44Z" data-provider="getRegionAreaData" finished-at="2019-02-27T13:52:17Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Automated Region]]>
+                <![CDATA[Automated Region 1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Updted Automation Region]]>
               </value>
             </param>
           </params>
@@ -29,7 +34,7 @@ at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.failNotEquals(Assert.java:776)
 at org.testng.Assert.assertTrue(Assert.java:44)
 at org.testng.Assert.assertTrue(Assert.java:54)
-at com.rc.qa.pages.ManageRegionsAreasPage.addRgion(ManageRegionsAreasPage.java:83)
+at com.rc.qa.pages.ManageRegionsAreasPage.addRgion(ManageRegionsAreasPage.java:92)
 at com.rc.qa.testcases.ManageRegionAreas.manageRegionArea(ManageRegionAreas.java:38)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -62,7 +67,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- manageRegionArea -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.rc.qa.testcases.ManageRegionAreas@589838eb]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-02-25T13:13:21Z" finished-at="2019-02-25T13:13:21Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.rc.qa.testcases.ManageRegionAreas@589838eb]" name="tearDown" is-config="true" duration-ms="9" started-at="2019-02-27T13:52:17Z" finished-at="2019-02-27T13:52:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

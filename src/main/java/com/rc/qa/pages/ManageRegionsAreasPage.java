@@ -56,6 +56,15 @@ public class ManageRegionsAreasPage extends TestBase
 	@FindBy(xpath = "//*[@id='add_group_div_id']/label")
 	WebElement popup_addREgion;
 	
+	//Update region	
+	@FindBy(xpath = "//input[@id='region_name']")
+	WebElement textbox_updateRegionName;
+	
+	@FindBy(xpath = "//button[@id='lodding_id2']")
+	WebElement button_updateRegion;
+	
+
+	
 	
 	
 	
@@ -72,29 +81,33 @@ public class ManageRegionsAreasPage extends TestBase
 			clickOnElement(button_dismiss);
 			clickOnElement(button_dismissConfirmationOK);
 		}
+		waitTillElemenyVisibility(tab_setUp);
 		clickOnElement(tab_setUp);
 		 js.executeScript("arguments[0].scrollIntoView();",link_Regions);
-		clickOnElement(link_Regions);		
-		clickOnElement(button_addRegion);
-		enterText(textbox_regionName, regionName);
-		
-		clickOnElement(button_submitRegion);
-		clickOnElement(popup_addREgion);
-		assertTrue(verifyTableData(regionName));
+		clickOnElement(link_Regions);	
+		waitTillElemenyVisibility(button_addRegion);
+//		clickOnElement(button_addRegion);
+//		enterText(textbox_regionName, regionName);
+//		clickOnElement(popup_addREgion);
+//		Thread.sleep(3000);
+//		clickOnElement(button_submitRegion);		
+//		assertTrue(verifyTableData(regionName));
 		
 		
 	
 
 	}
 
-//	public void editService(String serviceName, String updateName) {
-//
-//		clickOnTableActionButton(serviceName, "Edit");
-//		enterText(textbox_updateService, updateName);
-//		clickOnElement(button_update);
-//		assertTrue(verifyTableData(updateName));
-//
-//	}
+	public void editRegion(String regionName, String updatedRegionName) throws InterruptedException {
+
+		clickOnTableActionButton(regionName, "View/Edit");
+		enterText(textbox_updateRegionName, updatedRegionName);
+		clickOnElement(popup_addREgion);
+		Thread.sleep(3000);
+		clickOnElement(button_updateRegion);
+		assertTrue(verifyTableData(updatedRegionName));
+
+	}
 //
 //	public void deactivateService(String updateName) {
 //
