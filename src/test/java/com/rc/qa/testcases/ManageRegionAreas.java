@@ -48,12 +48,6 @@ public class ManageRegionAreas  extends TestBase
 		initialization();
 		Login loginObj = new Login();
 		loginObj.login();
-	
-	
-		
-		
-		
-
 	}
 
 	@AfterMethod

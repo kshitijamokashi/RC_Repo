@@ -44,6 +44,7 @@ public class ManageRegionsAreasPage extends TestBase
 	@FindBy(xpath = "//button[@class='btn clear_input_class disable_submit_btn addHideBtn']")
 	WebElement button_cancelRegion;
 	
+	//maintainance alertify pop up
 	@FindBy(xpath = "//div[@class='ajs-message ajs-visible']")
 	WebElement alertify_popup;
 
@@ -77,7 +78,7 @@ public class ManageRegionsAreasPage extends TestBase
 	public void addRgion(String regionName) throws InterruptedException {
 		// Wait for page load
 		waitTillElemenyVisibility(sidebar);
-		if (verifyElementIsDisplayed(alertify_popup)) {
+	if(verifyElementIsDisplayed(alertify_popup)) {
 			clickOnElement(button_dismiss);
 			clickOnElement(button_dismissConfirmationOK);
 		}
@@ -86,12 +87,12 @@ public class ManageRegionsAreasPage extends TestBase
 		 js.executeScript("arguments[0].scrollIntoView();",link_Regions);
 		clickOnElement(link_Regions);	
 		waitTillElemenyVisibility(button_addRegion);
-//		clickOnElement(button_addRegion);
-//		enterText(textbox_regionName, regionName);
-//		clickOnElement(popup_addREgion);
-//		Thread.sleep(3000);
-//		clickOnElement(button_submitRegion);		
-//		assertTrue(verifyTableData(regionName));
+		clickOnElement(button_addRegion);
+		enterText(textbox_regionName, regionName);
+		clickOnElement(popup_addREgion);
+		Thread.sleep(3000);
+		clickOnElement(button_submitRegion);		
+		assertTrue(verifyTableData(regionName));
 		
 		
 	

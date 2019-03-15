@@ -32,7 +32,7 @@ public class ManageServicesPage extends TestBase
 	@FindBy(xpath = "//span[@class='nav-txt'][contains(text(), 'Services')]")
 	WebElement link_services;
 
-	@FindBy(xpath = "//button[contains(text(), 'Add Services')]")
+	@FindBy(xpath = "//span[@class='label label-success pull-right']")
 	WebElement button_addServices;
 
 	@FindBy(xpath = "//form[@name='frmCleaningServices']")
@@ -64,7 +64,7 @@ public class ManageServicesPage extends TestBase
 	WebElement button_update;
 
 	// Deactivate service
-	@FindBy(xpath = "//button[@class='btn btn-success pull-left'][contains(text(), 'Show Inactive')]")
+	@FindBy(xpath = "//div[@class='label label-primary pull-right'][contains(text(), 'Show Inactive')]")
 	WebElement button_showInactive;
 
 	// String on navigators
@@ -88,15 +88,14 @@ public class ManageServicesPage extends TestBase
 			clickOnElement(check_dateCalculation);
 
 		// add service button
-//		if (verifyElementIsDisplayed(alertify_popup)) {
-//			clickOnElement(button_dismiss);
-//			clickOnElement(button_dismissConfirmationOK);
-//		}
+		if (verifyElementIsDisplayed(alertify_popup)) {
+			clickOnElement(button_dismiss);
+			clickOnElement(button_dismissConfirmationOK);
+		}
 		Thread.sleep(4000);
 		clickOnElement(button_Add);
-		assertTrue(verifyTableData(serviceName));
-
-	}
+		assertTrue(verifyTableData(serviceName));	
+		}
 
 	public void editService(String serviceName, String updateName) {
 

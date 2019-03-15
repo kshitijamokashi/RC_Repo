@@ -305,8 +305,22 @@ public class TestBase
 		List<WebElement> allHeaders = table.findElements(By.tagName("tr"));
 		// System.out.println("This is the total numbers of rows" +
 		// allHeaders.size());
-
 		return allHeaders;
+	}
+	
+	public static Integer getTableColumnSize(String textTomatch) {
+		int i = 0;
+		int getRowMatched = getTableRow(textTomatch);
+		WebElement table = driver.findElement(By.xpath("//table[@id='data-table']"));
+		List<WebElement> allHeaders = table.findElements(By.tagName("tr"));
+		List<WebElement> listOfCols = allHeaders.get(getRowMatched).findElements(By.tagName("td"));
+		System.out.println("Column data " + listOfCols.size());
+		for (i = 0; i < listOfCols.size(); i++) {
+			System.out.println("Column data " + listOfCols.get(i).getText());
+			if (listOfCols.get(i).getText().equalsIgnoreCase("Action"))
+				break;
+		}
+		return i + 1;
 	}
 
 	/***
@@ -324,7 +338,8 @@ public class TestBase
 			columnHead++;
 			// System.out.println(header.getText());
 			if (header.getText().contains(textTomatch)) {
-				// System.out.println(columnHead);
+				 System.out.println(columnHead);
+				
 				break;
 			}
 		}
@@ -335,9 +350,10 @@ public class TestBase
 	public static void clickOnTableActionButton(String textTomatchFromRow, String optionToselect) {
 		try {
 			getTable();
-			int i = getTableRow(textTomatchFromRow);
+			int rowNo = getTableRow(textTomatchFromRow);
+			int colNo= getTableColumnSize(textTomatchFromRow);
 			Actions drpdwn = new Actions(driver);
-			driver.findElement(By.xpath("//*[@id='data-table']/tbody/tr[" + i + "]/td[4]/div/button")).click();
+			driver.findElement(By.xpath("//*[@id='data-table']/tbody/tr[" + rowNo + "]/td["+colNo+"]/div/button")).click();
 			WebElement option = driver.findElement(By.linkText(optionToselect));
 			waitTillElemenyVisibility(option);
 			Action selectobject = drpdwn.moveToElement(option).click().build();
@@ -346,14 +362,18 @@ public class TestBase
 			System.out.println("Exception Found..." + e.getMessage());
 		}
 	}
+	
+	
 
 	public static void clickOnTableActionButtonWithAlert(String textTomatchFromRow, String optionToselect) {
 		try {
 
 			getTable();
-			int i = getTableRow(textTomatchFromRow);
+			int rowNo = getTableRow(textTomatchFromRow);
+			int colNo= getTableColumnSize(textTomatchFromRow);
+		
 			Actions drpdwn = new Actions(driver);
-			driver.findElement(By.xpath("//*[@id='data-table']/tbody/tr[" + i + "]/td[4]/div/button")).click();
+			driver.findElement(By.xpath("//*[@id='data-table']/tbody/tr[" + rowNo + "]/td["+colNo+"]/div/button")).click();
 			WebElement option = driver.findElement(By.linkText(optionToselect));
 			waitTillElemenyVisibility(option);
 			Action selectobject = drpdwn.moveToElement(option).click().build();
